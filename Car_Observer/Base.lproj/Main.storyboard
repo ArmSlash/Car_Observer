@@ -17,27 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-w3-v01">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-w3-v01">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT8-y4-LpJ">
-                                <rect key="frame" x="37" y="211" width="300" height="56"/>
-                                <state key="normal" title="Button" backgroundImage="Экран загрузки"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv6-ta-NRE">
+                                <rect key="frame" x="0.0" y="237" width="375" height="260"/>
+                                <size key="titleShadowOffset" width="418" height="400"/>
+                                <state key="normal" image="Error codes button">
+                                    <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT8-y4-LpJ">
+                                <rect key="frame" x="0.0" y="88" width="375" height="260"/>
+                                <size key="titleShadowOffset" width="418" height="400"/>
+                                <state key="normal" image="sensors button">
+                                    <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" image="Pressed sensors button"/>
                                 <connections>
                                     <segue destination="tCm-ZX-c1x" kind="show" id="ML4-Im-RKd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGz-uR-nN0">
+                                <rect key="frame" x="121" y="667" width="133" height="107"/>
+                                <state key="normal" image="Connect button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eb-AS-QSG">
+                                <rect key="frame" x="0.0" y="384" width="375" height="260"/>
+                                <size key="titleShadowOffset" width="418" height="400"/>
+                                <state key="normal" image="How it button">
+                                    <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PZP-w3-v01" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O41-Bj-ey1"/>
-                            <constraint firstAttribute="bottom" secondItem="PZP-w3-v01" secondAttribute="bottom" id="RBi-b7-M84"/>
-                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="fmd-08-F8r"/>
-                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="gQo-Wd-yfv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VT8-y4-LpJ" secondAttribute="bottom" constant="511" id="hh6-ZK-ecc"/>
-                            <constraint firstItem="PZP-w3-v01" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j5D-nk-wg6"/>
-                            <constraint firstItem="PZP-w3-v01" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wfJ-o8-kz8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VT8-y4-LpJ" secondAttribute="trailing" constant="38" id="zqB-fV-g4W"/>
+                            <constraint firstItem="bGz-uR-nN0" firstAttribute="top" secondItem="7eb-AS-QSG" secondAttribute="bottom" constant="23" id="1Mc-3N-CUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bGz-uR-nN0" secondAttribute="bottom" constant="4" id="Bla-Hq-vcs"/>
+                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L3E-Ft-YeZ"/>
+                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="PMp-nP-v0I"/>
+                            <constraint firstItem="7eb-AS-QSG" firstAttribute="top" secondItem="VT8-y4-LpJ" secondAttribute="bottom" constant="36" id="Sf6-bh-wZe"/>
+                            <constraint firstItem="7eb-AS-QSG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SlE-1s-PfJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bGz-uR-nN0" secondAttribute="trailing" constant="121" id="YB8-g1-wt1"/>
+                            <constraint firstItem="bGz-uR-nN0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="a9c-1n-3GD"/>
+                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aIj-O9-i0j"/>
+                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e0P-fV-USx"/>
+                            <constraint firstItem="7eb-AS-QSG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e0m-88-zb2"/>
+                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mcm-Nz-2CB"/>
+                            <constraint firstItem="bGz-uR-nN0" firstAttribute="top" secondItem="Nv6-ta-NRE" secondAttribute="bottom" constant="170" id="uBh-Qz-Q55"/>
+                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yKK-wM-vR5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -82,7 +111,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Connect button" width="79" height="107"/>
+        <image name="Error codes button" width="375" height="260"/>
+        <image name="How it button" width="375" height="260"/>
         <image name="MenuBackground" width="375" height="812"/>
-        <image name="Экран загрузки" width="375" height="812"/>
+        <image name="Pressed sensors button" width="341" height="241"/>
+        <image name="sensors button" width="375" height="260"/>
     </resources>
 </document>
