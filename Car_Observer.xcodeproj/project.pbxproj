@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; };
+		49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA7207F6C140086E442 /* AppDelegate.swift */; };
 		49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA9207F6C140086E442 /* ViewController.swift */; };
 		49DD8DAD207F6C140086E442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DAB207F6C140086E442 /* Main.storyboard */; };
@@ -15,7 +17,53 @@
 		49DD8DBF207F76E10086E442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		49D1C39A20810EE0009CF4DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9258F2E71EAF45E7006B7580;
+			remoteInfo = OBD2Swift;
+		};
+		49D1C39C20810EE0009CF4DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9258F2F01EAF45E7006B7580;
+			remoteInfo = OBD2SwiftTests;
+		};
+		49D1C39E20810EE0009CF4DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 925EDD6C1EE96D73009B7955;
+			remoteInfo = OBD2SwiftMacOS;
+		};
+		49D1C3A220810F11009CF4DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9258F2E61EAF45E7006B7580;
+			remoteInfo = OBD2Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49D1C38720810824009CF4DD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49DD8DA4207F6C140086E442 /* Car_Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car_Observer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD8DA7207F6C140086E442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DD8DA9207F6C140086E442 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,12 +79,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49D1C39520810EE0009CF4DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */,
+				49D1C39D20810EE0009CF4DD /* OBD2SwiftTests.xctest */,
+				49D1C39F20810EE0009CF4DD /* OBD2SwiftMacOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		49DD8D9B207F6C140086E442 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +122,7 @@
 				49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */,
 				49DD8DB6207F6C140086E442 /* Info.plist */,
 				49DD8DAE207F6C140086E442 /* Car_Observer.xcdatamodeld */,
+				49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */,
 			);
 			path = Car_Observer;
 			sourceTree = "<group>";
@@ -77,10 +137,12 @@
 				49DD8DA0207F6C140086E442 /* Sources */,
 				49DD8DA1207F6C140086E442 /* Frameworks */,
 				49DD8DA2207F6C140086E442 /* Resources */,
+				49D1C38720810824009CF4DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49D1C3A320810F11009CF4DD /* PBXTargetDependency */,
 			);
 			name = Car_Observer;
 			productName = Car_Observer;
@@ -114,12 +176,42 @@
 			mainGroup = 49DD8D9B207F6C140086E442;
 			productRefGroup = 49DD8DA5207F6C140086E442 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 49D1C39520810EE0009CF4DD /* Products */;
+					ProjectRef = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				49DD8DA3207F6C140086E442 /* Car_Observer */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OBD2Swift.framework;
+			remoteRef = 49D1C39A20810EE0009CF4DD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49D1C39D20810EE0009CF4DD /* OBD2SwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OBD2SwiftTests.xctest;
+			remoteRef = 49D1C39C20810EE0009CF4DD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49D1C39F20810EE0009CF4DD /* OBD2SwiftMacOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OBD2SwiftMacOS.framework;
+			remoteRef = 49D1C39E20810EE0009CF4DD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		49DD8DA2207F6C140086E442 /* Resources */ = {
@@ -146,6 +238,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49D1C3A320810F11009CF4DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OBD2Swift;
+			targetProxy = 49D1C3A220810F11009CF4DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		49DD8DAB207F6C140086E442 /* Main.storyboard */ = {
@@ -269,6 +369,7 @@
 		49DD8DBA207F6C140086E442 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +387,7 @@
 		49DD8DBB207F6C140086E442 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
