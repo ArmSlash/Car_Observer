@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +21,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv6-ta-NRE">
+                                <rect key="frame" x="0.0" y="237" width="375" height="260"/>
+                                <size key="titleShadowOffset" width="418" height="400"/>
+                                <state key="normal" image="Error codes button">
+                                    <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT8-y4-LpJ">
+                                <rect key="frame" x="0.0" y="88" width="375" height="260"/>
+                                <size key="titleShadowOffset" width="418" height="400"/>
+                                <state key="normal" image="sensors button">
+                                    <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" image="Pressed sensors button"/>
+                                <connections>
+                                    <segue destination="tCm-ZX-c1x" kind="show" id="ML4-Im-RKd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGz-uR-nN0">
+                                <rect key="frame" x="121" y="667" width="133" height="107"/>
+                                <state key="normal" image="Connect button"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eb-AS-QSG">
                                 <rect key="frame" x="0.0" y="384" width="375" height="260"/>
                                 <size key="titleShadowOffset" width="418" height="400"/>
@@ -29,45 +50,23 @@
                                     <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv6-ta-NRE">
-                                <rect key="frame" x="0.0" y="237" width="375" height="260"/>
-                                <size key="titleShadowOffset" width="418" height="400"/>
-                                <state key="normal" image="Error codes button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGz-uR-nN0">
-                                <rect key="frame" x="121" y="667" width="133" height="107"/>
-                                <state key="normal" image="Connect button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT8-y4-LpJ">
-                                <rect key="frame" x="0.0" y="96" width="375" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="I3k-XW-t23"/>
-                                    <constraint firstAttribute="height" constant="250" id="maa-ew-pt4"/>
-                                </constraints>
-                                <state key="normal" image="sensors button"/>
-                                <state key="selected" image="Pressed sensors button"/>
-                                <state key="highlighted" image="Pressed sensors button"/>
-                                <connections>
-                                    <segue destination="tCm-ZX-c1x" kind="show" id="ML4-Im-RKd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7eb-AS-QSG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Z1-IQ-uJK"/>
-                            <constraint firstItem="7eb-AS-QSG" firstAttribute="top" secondItem="VT8-y4-LpJ" secondAttribute="bottom" constant="38" id="6ra-zP-Fho"/>
-                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NSN-DJ-fcn"/>
-                            <constraint firstItem="7eb-AS-QSG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PA2-f7-LnJ"/>
-                            <constraint firstItem="bGz-uR-nN0" firstAttribute="top" secondItem="Nv6-ta-NRE" secondAttribute="bottom" constant="170" id="Qv9-N3-oZK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bGz-uR-nN0" secondAttribute="trailing" constant="121" id="Rwf-v5-GWi"/>
-                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bv0-hZ-s6B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bGz-uR-nN0" secondAttribute="bottom" constant="4" id="ki5-FK-L00"/>
-                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="lxg-nU-9rt"/>
-                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rw9-gc-CfR"/>
-                            <constraint firstItem="bGz-uR-nN0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="t65-IL-Gzu"/>
-                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="tBs-Ed-y4l"/>
-                            <constraint firstItem="bGz-uR-nN0" firstAttribute="top" secondItem="7eb-AS-QSG" secondAttribute="bottom" constant="23" id="ts4-0z-ek0"/>
-                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wLB-V5-pnu"/>
+                            <constraint firstItem="bGz-uR-nN0" firstAttribute="top" secondItem="7eb-AS-QSG" secondAttribute="bottom" constant="23" id="1Mc-3N-CUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bGz-uR-nN0" secondAttribute="bottom" constant="4" id="Bla-Hq-vcs"/>
+                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L3E-Ft-YeZ"/>
+                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="PMp-nP-v0I"/>
+                            <constraint firstItem="7eb-AS-QSG" firstAttribute="top" secondItem="VT8-y4-LpJ" secondAttribute="bottom" constant="36" id="Sf6-bh-wZe"/>
+                            <constraint firstItem="7eb-AS-QSG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SlE-1s-PfJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bGz-uR-nN0" secondAttribute="trailing" constant="121" id="YB8-g1-wt1"/>
+                            <constraint firstItem="bGz-uR-nN0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="a9c-1n-3GD"/>
+                            <constraint firstItem="Nv6-ta-NRE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aIj-O9-i0j"/>
+                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e0P-fV-USx"/>
+                            <constraint firstItem="7eb-AS-QSG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e0m-88-zb2"/>
+                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mcm-Nz-2CB"/>
+                            <constraint firstItem="bGz-uR-nN0" firstAttribute="top" secondItem="Nv6-ta-NRE" secondAttribute="bottom" constant="170" id="uBh-Qz-Q55"/>
+                            <constraint firstItem="VT8-y4-LpJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yKK-wM-vR5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -84,92 +83,7 @@
                     <view key="view" contentMode="scaleToFill" id="JzY-D3-6So">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sens bkg" translatesAutoresizingMaskIntoConstraints="NO" id="ahm-QK-A0e">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebM-ZY-cbr">
-                                <rect key="frame" x="41" y="164" width="75" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ebM-ZY-cbr" secondAttribute="height" multiplier="75:77" id="OsL-rf-6Xp"/>
-                                </constraints>
-                                <state key="normal" image="Engine button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7Y-aB-8ck">
-                                <rect key="frame" x="41" y="692" width="75" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="i7Y-aB-8ck" secondAttribute="height" multiplier="75:77" id="eTa-Bz-4M9"/>
-                                </constraints>
-                                <state key="normal" image="Outside params button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUy-d0-6Rk">
-                                <rect key="frame" x="16" y="334" width="75" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EUy-d0-6Rk" secondAttribute="height" multiplier="75:77" id="XpW-Bu-VBh"/>
-                                </constraints>
-                                <state key="normal" image="Vehicle status button"/>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hof-V4-uE8">
-                                <rect key="frame" x="0.0" y="88" width="375" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected sensors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5q-kR-irZ">
-                                        <rect key="frame" x="22" y="5" width="214" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="e5q-kR-irZ" secondAttribute="height" multiplier="107:10" id="AzT-n3-VPp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvS-k3-d5h">
-                                        <rect key="frame" x="292" y="5" width="75" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="fhu-Oz-PEH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Show &gt;">
-                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.42352941176470588" green="0.52941176470588236" blue="0.37254901960784315" alpha="0.88" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kvS-k3-d5h" secondAttribute="bottom" constant="5" id="0O2-kC-ejt"/>
-                                    <constraint firstAttribute="bottom" secondItem="e5q-kR-irZ" secondAttribute="bottom" constant="5" id="HTd-zB-5Gi"/>
-                                    <constraint firstItem="kvS-k3-d5h" firstAttribute="top" secondItem="hof-V4-uE8" secondAttribute="top" constant="5" id="LzO-x4-cjV"/>
-                                    <constraint firstAttribute="height" constant="30" id="MkY-Gc-i2F"/>
-                                    <constraint firstAttribute="trailing" secondItem="kvS-k3-d5h" secondAttribute="trailing" constant="8" id="NgW-3m-Srn"/>
-                                    <constraint firstItem="e5q-kR-irZ" firstAttribute="top" secondItem="hof-V4-uE8" secondAttribute="top" constant="5" id="She-Di-7C3"/>
-                                    <constraint firstItem="e5q-kR-irZ" firstAttribute="leading" secondItem="hof-V4-uE8" secondAttribute="leading" constant="22" id="z8w-PW-rub"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ief-t4-yG5">
-                                <rect key="frame" x="284" y="510" width="75" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ief-t4-yG5" secondAttribute="height" multiplier="75:77" id="hZa-07-m87"/>
-                                </constraints>
-                                <state key="normal" image="fuel button"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ebM-ZY-cbr" firstAttribute="leading" secondItem="fZd-yQ-N2R" secondAttribute="leading" constant="41" id="8qi-fq-exc"/>
-                            <constraint firstItem="ahm-QK-A0e" firstAttribute="leading" secondItem="fZd-yQ-N2R" secondAttribute="leading" id="9wb-o6-Tm2"/>
-                            <constraint firstItem="hof-V4-uE8" firstAttribute="trailing" secondItem="fZd-yQ-N2R" secondAttribute="trailing" id="BnE-Zk-TdY"/>
-                            <constraint firstItem="EUy-d0-6Rk" firstAttribute="top" secondItem="ebM-ZY-cbr" secondAttribute="bottom" constant="93" id="JtP-9Y-LK3"/>
-                            <constraint firstItem="ahm-QK-A0e" firstAttribute="top" secondItem="JzY-D3-6So" secondAttribute="top" id="L4U-7n-BoQ"/>
-                            <constraint firstItem="fZd-yQ-N2R" firstAttribute="trailing" secondItem="ief-t4-yG5" secondAttribute="trailing" constant="16" id="R2Y-4k-bu0"/>
-                            <constraint firstItem="ahm-QK-A0e" firstAttribute="trailing" secondItem="fZd-yQ-N2R" secondAttribute="trailing" id="Uhg-G6-LoL"/>
-                            <constraint firstAttribute="bottom" secondItem="ahm-QK-A0e" secondAttribute="bottom" id="bB3-DI-1LC"/>
-                            <constraint firstItem="fZd-yQ-N2R" firstAttribute="bottom" secondItem="i7Y-aB-8ck" secondAttribute="bottom" constant="9" id="diF-Z1-Fz3"/>
-                            <constraint firstItem="EUy-d0-6Rk" firstAttribute="leading" secondItem="fZd-yQ-N2R" secondAttribute="leading" constant="16" id="fUT-ax-dyD"/>
-                            <constraint firstItem="ebM-ZY-cbr" firstAttribute="top" secondItem="hof-V4-uE8" secondAttribute="bottom" constant="46" id="fV3-hB-2fi"/>
-                            <constraint firstItem="fZd-yQ-N2R" firstAttribute="bottom" secondItem="ief-t4-yG5" secondAttribute="bottom" constant="191" id="fe1-66-csf"/>
-                            <constraint firstItem="i7Y-aB-8ck" firstAttribute="leading" secondItem="fZd-yQ-N2R" secondAttribute="leading" constant="41" id="jWz-Wz-C2f"/>
-                            <constraint firstItem="hof-V4-uE8" firstAttribute="leading" secondItem="fZd-yQ-N2R" secondAttribute="leading" id="k5X-hJ-TtD"/>
-                            <constraint firstItem="hof-V4-uE8" firstAttribute="top" secondItem="fZd-yQ-N2R" secondAttribute="top" id="yA1-h0-iPy"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fZd-yQ-N2R"/>
                     </view>
                 </viewController>
@@ -198,15 +112,10 @@
     </scenes>
     <resources>
         <image name="Connect button" width="79" height="107"/>
-        <image name="Engine button" width="75" height="77"/>
         <image name="Error codes button" width="375" height="260"/>
         <image name="How it button" width="375" height="260"/>
         <image name="MenuBackground" width="375" height="812"/>
-        <image name="Outside params button" width="75" height="77"/>
-        <image name="Pressed sensors button" width="375" height="250"/>
-        <image name="Sens bkg" width="375" height="812"/>
-        <image name="Vehicle status button" width="75" height="77"/>
-        <image name="fuel button" width="75" height="77"/>
+        <image name="Pressed sensors button" width="341" height="241"/>
         <image name="sensors button" width="375" height="260"/>
     </resources>
 </document>
