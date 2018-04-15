@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     static var host = "192.168.0.10"
     static var port = 35000
     
-    let obd = OBD2()
-    
+    let obd = OBD2(host: host, port: port)
     
     @IBOutlet var connectButton: UIButton!
     
@@ -29,24 +28,18 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         
-        
-        
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func connection(_ sender: Any) {
         
         obd.connect { (success, error) in
-            OperationQueue.main.addOperation {
+            OperationQueue.main.addOperation({
                 if let error = error {
-                    print("obd connection failed with error \(error)")
+                print("OBD connection failed with \(error)")
+                    
                 }
-            }
+            })
         }
     }
     
