@@ -25,17 +25,9 @@ class PidSelectionViewController: UIViewController {
 
     
     @IBAction func showPidsList(_ sender: UIButton) {
-        
         switch sender.tag {
         case 0:
             print("engine")
-//            let blur = UIBlurEffect(style: UIBlurEffectStyle.regular)
-//
-//            let blurView = UIVisualEffectView(effect: blur)
-//
-//            blurView.frame = self.view.bounds
-//            view.addSubview(blurView)
-            
         case 1:
             print("status")
         case 2:
@@ -45,9 +37,11 @@ class PidSelectionViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction func unwindToPidSelection(segue : UIStoryboardSegue){
         
     }
-
     /*
     // MARK: - Navigation
 

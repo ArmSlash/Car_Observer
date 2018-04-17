@@ -16,11 +16,13 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
     let pidsArray = [12, 13, 14, 15]
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.bounces = false
+        self.tableView.isUserInteractionEnabled = true
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,19 +60,45 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
             cellIdentifire = "pidCell"
             let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifire as String) as! PidsListCell!
             cell?.pidImage.image = UIImage(named: "checkTimeIcon")
-            return cell!
+            return self.makePidCell(cell: cell!)
         default:
             cellIdentifire = "okCell"
             let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifire as String) as UITableViewCell!
-            return cell!
+            return self.makePidCell(cell: cell!)
         }
-        
-        
-        
     }
     
+    func  makePidCell(cell:UITableViewCell) -> UITableViewCell {
+        cell.layer.borderWidth = 0
+        cell.layer.cornerRadius = 12.5
+        cell.clipsToBounds = true
+        
+        return cell
+    }
     
+//    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+//        print("highlight row at \(indexPath)")
+//        let cell = self.tableView.cellForRow(at: indexPath)
+//        cell!.backgroundColor = UIColor.blue
+//    }
+//    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+//        print("unhighlight row at \(indexPath)")
+//        let cell = self.tableView.cellForRow(at: indexPath)
+//        cell!.backgroundColor = UIColor.init(red: 131, green: 158, blue: 119, alpha: 100)
+//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == self.pidsArray.count{
+            self.performSegue(withIdentifier: "unwindToPidSelection", sender: self)
+        }
+    }
 
+
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+       
+    }
+    
     /*
     // MARK: - Navigation
 

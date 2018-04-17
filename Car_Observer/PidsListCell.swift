@@ -10,9 +10,12 @@ import UIKit
 
 class PidsListCell: UITableViewCell {
     
+    
+    
     @IBOutlet var pidImage: UIImageView!
     @IBOutlet var pidDescription: UILabel!
     @IBOutlet var checkmarkImageView: UIImageView!
+    
     
     
     override func awakeFromNib() {
@@ -21,9 +24,7 @@ class PidsListCell: UITableViewCell {
         self.backgroundColor = UIColor.init(red: 131, green: 158, blue: 119, alpha: 100)
         
         
-        self.layer.borderWidth = 0
-        self.layer.cornerRadius = 12.5
-        self.clipsToBounds = true
+       
         
         self.checkmarkImageView.layer.borderWidth = 0
         self.checkmarkImageView.layer.cornerRadius = 4
@@ -33,8 +34,12 @@ class PidsListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        if selected == true{
+            self.checkmarkImageView.image = UIImage(named: "checkmarkIcon")
+        }else{
+            self.checkmarkImageView.image = UIImage()
+        }
+        
     }
 
 }

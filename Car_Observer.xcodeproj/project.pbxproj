@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490022732082303300FAF1F6 /* PidsListViewController.swift */; };
 		4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227720836D8D00FAF1F6 /* PidsListCell.swift */; };
+		4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4900227B2085FED600FAF1F6 /* Assets.xcassets */; };
 		49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; };
 		49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */; };
@@ -16,7 +17,6 @@
 		49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA9207F6C140086E442 /* ViewController.swift */; };
 		49DD8DAD207F6C140086E442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DAB207F6C140086E442 /* Main.storyboard */; };
 		49DD8DB0207F6C140086E442 /* Car_Observer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DAE207F6C140086E442 /* Car_Observer.xcdatamodeld */; };
-		49DD8DBD207F6E5F0086E442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DBC207F6E5F0086E442 /* Assets.xcassets */; };
 		49DD8DBF207F76E10086E442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +68,7 @@
 /* Begin PBXFileReference section */
 		490022732082303300FAF1F6 /* PidsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidsListViewController.swift; sourceTree = "<group>"; };
 		4900227720836D8D00FAF1F6 /* PidsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidsListCell.swift; sourceTree = "<group>"; };
+		4900227B2085FED600FAF1F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidSelectionViewController.swift; sourceTree = "<group>"; };
 		49DD8DA4207F6C140086E442 /* Car_Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car_Observer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +77,6 @@
 		49DD8DAC207F6C140086E442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DD8DAF207F6C140086E442 /* Car_Observer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Car_Observer.xcdatamodel; sourceTree = "<group>"; };
 		49DD8DB6207F6C140086E442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49DD8DBC207F6E5F0086E442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +126,7 @@
 				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
 				490022732082303300FAF1F6 /* PidsListViewController.swift */,
 				4900227720836D8D00FAF1F6 /* PidsListCell.swift */,
-				49DD8DBC207F6E5F0086E442 /* Assets.xcassets */,
+				4900227B2085FED600FAF1F6 /* Assets.xcassets */,
 				49DD8DAB207F6C140086E442 /* Main.storyboard */,
 				49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */,
 				49DD8DB6207F6C140086E442 /* Info.plist */,
@@ -228,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DD8DBF207F76E10086E442 /* LaunchScreen.storyboard in Resources */,
-				49DD8DBD207F6E5F0086E442 /* Assets.xcassets in Resources */,
+				4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */,
 				49DD8DAD207F6C140086E442 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WUZ6U6J43R;
 				INFOPLIST_FILE = Car_Observer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eSperApps.Car-Observer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,7 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WUZ6U6J43R;
 				INFOPLIST_FILE = Car_Observer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eSperApps.Car-Observer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
