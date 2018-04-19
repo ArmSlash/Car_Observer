@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -146,14 +151,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvS-k3-d5h">
                                         <rect key="frame" x="292" y="5" width="75" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="fhu-Oz-PEH"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="fhu-Oz-PEH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Show &gt;">
                                             <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="YtJ-cK-ucB" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="cky-vw-jJo"/>
+                                            <segue destination="YtJ-cK-ucB" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="cky-vw-jJo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -161,11 +166,13 @@
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="kvS-k3-d5h" secondAttribute="bottom" constant="5" id="0O2-kC-ejt"/>
+                                    <constraint firstItem="kvS-k3-d5h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hof-V4-uE8" secondAttribute="leading" constant="20" symbolic="YES" id="3Qs-bQ-IMC"/>
                                     <constraint firstAttribute="bottom" secondItem="e5q-kR-irZ" secondAttribute="bottom" constant="5" id="HTd-zB-5Gi"/>
                                     <constraint firstItem="kvS-k3-d5h" firstAttribute="top" secondItem="hof-V4-uE8" secondAttribute="top" constant="5" id="LzO-x4-cjV"/>
                                     <constraint firstAttribute="height" constant="30" id="MkY-Gc-i2F"/>
                                     <constraint firstAttribute="trailing" secondItem="kvS-k3-d5h" secondAttribute="trailing" constant="8" id="NgW-3m-Srn"/>
                                     <constraint firstItem="e5q-kR-irZ" firstAttribute="top" secondItem="hof-V4-uE8" secondAttribute="top" constant="5" id="She-Di-7C3"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e5q-kR-irZ" secondAttribute="trailing" constant="20" symbolic="YES" id="sNr-Ce-qCY"/>
                                     <constraint firstItem="e5q-kR-irZ" firstAttribute="leading" secondItem="hof-V4-uE8" secondAttribute="leading" constant="22" id="z8w-PW-rub"/>
                                 </constraints>
                             </view>
@@ -212,24 +219,85 @@
             </objects>
             <point key="canvasLocation" x="1687.2" y="133.74384236453201"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sensors Table View Controller-->
         <scene sceneID="8am-2K-sqv">
             <objects>
-                <tableViewController id="YtJ-cK-ucB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hx5-2t-pyA">
+                <tableViewController id="YtJ-cK-ucB" customClass="SensorsTableViewController" customModule="Car_Observer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hx5-2t-pyA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TN1-De-BjT">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SensorCell" rowHeight="191" id="TN1-De-BjT" customClass="SensorsCell" customModule="Car_Observer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="191"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TN1-De-BjT" id="uxc-mg-P6a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGq-bt-Pew">
+                                            <rect key="frame" x="163" y="5" width="48" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="8eH-hI-IyG"/>
+                                                <constraint firstAttribute="height" constant="48" id="pVa-ky-axO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDv-z9-7P0">
+                                            <rect key="frame" x="99" y="104" width="177" height="44.666666666666657"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44.670000000000002" id="2PK-vN-Ucx"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="177" id="ce8-G3-471"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="37"/>
+                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sDv-z9-7P0" firstAttribute="leading" secondItem="uxc-mg-P6a" secondAttribute="leadingMargin" constant="91" id="DgB-5G-3NV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="sDv-z9-7P0" secondAttribute="bottom" constant="34.329999999999998" id="VIf-lF-IJS"/>
+                                        <constraint firstItem="gGq-bt-Pew" firstAttribute="leading" secondItem="uxc-mg-P6a" secondAttribute="leading" constant="163" id="YGv-a8-wlT"/>
+                                        <constraint firstItem="gGq-bt-Pew" firstAttribute="top" secondItem="uxc-mg-P6a" secondAttribute="top" constant="5" id="gnc-Tq-qge"/>
+                                        <constraint firstAttribute="trailing" secondItem="gGq-bt-Pew" secondAttribute="trailing" constant="164" id="rg3-F7-IhV"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sDv-z9-7P0" secondAttribute="trailingMargin" id="x1r-MP-cfQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="sensorDataLabel" destination="sDv-z9-7P0" id="F0p-9e-Gbm"/>
+                                    <outlet property="sensorIconView" destination="gGq-bt-Pew" id="a3n-pn-4jP"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="okButtonCell" rowHeight="51" id="omq-PT-zmr">
+                                <rect key="frame" x="0.0" y="219" width="375" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="omq-PT-zmr" id="Zc4-oT-RKr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyc-ik-QH3">
+                                            <rect key="frame" x="97" y="0.0" width="180" height="51"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                            <state key="normal" title="Button" image="okCellButton"/>
+                                            <state key="selected" image="pressedOkCellButton" backgroundImage="pressedOkCellButton"/>
+                                            <state key="highlighted" image="pressedOkCellButton"/>
+                                            <connections>
+                                                <action selector="returnToPidsListVC:" destination="YtJ-cK-ucB" eventType="touchUpInside" id="swj-rD-JbR"/>
+                                                <segue destination="nWp-Is-OLT" kind="unwind" unwindAction="unwindToPidSelectionWithSegue:" id="p3Y-Ww-4O1"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Hyc-ik-QH3" secondAttribute="bottom" id="EjJ-qz-kwZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hyc-ik-QH3" secondAttribute="trailing" constant="98" id="eSX-hZ-WTb"/>
+                                        <constraint firstItem="Hyc-ik-QH3" firstAttribute="top" secondItem="Zc4-oT-RKr" secondAttribute="top" id="naa-oW-rwm"/>
+                                        <constraint firstItem="Hyc-ik-QH3" firstAttribute="leading" secondItem="Zc4-oT-RKr" secondAttribute="leading" constant="97" id="nxJ-uE-fsp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="YtJ-cK-ucB" id="Ncj-V6-iTh"/>
                             <outlet property="delegate" destination="YtJ-cK-ucB" id="tc4-Nb-nRd"/>
@@ -237,8 +305,9 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rx1-97-0ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nWp-Is-OLT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="134"/>
+            <point key="canvasLocation" x="2548" y="133.74384236453201"/>
         </scene>
         <!--Pids List View Controller-->
         <scene sceneID="MBe-5n-q7O">
@@ -248,7 +317,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sens bkg" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Su-wEw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ListBkg" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Su-wEw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -307,7 +376,7 @@
                                             <outlet property="pidImage" destination="Rnc-5x-WHf" id="n98-Tk-lXM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="okCell" id="ktF-d7-fRa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="okCell" id="ktF-d7-fRa">
                                         <rect key="frame" x="0.0" y="88" width="331" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ktF-d7-fRa" id="0q9-bS-9Ug">
@@ -325,7 +394,7 @@
                                                     <rect key="frame" x="128" y="9.6666666666666643" width="29" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="O24-hv-xm7"/>
-                                                        <constraint firstAttribute="width" constant="28.999999999999886" id="dHr-qL-eno"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28.999999999999886" id="dHr-qL-eno"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -368,7 +437,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="By1-Nn-oFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aT3-qz-ykg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="1092"/>
+            <point key="canvasLocation" x="1687" y="862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M4N-eJ-YIv">
@@ -394,6 +463,7 @@
         <image name="Engine button" width="75" height="77"/>
         <image name="Error codes button" width="375" height="260"/>
         <image name="How it button" width="375" height="260"/>
+        <image name="ListBkg" width="1125" height="2436"/>
         <image name="MenuBackground" width="375" height="812"/>
         <image name="Outside params button" width="75" height="77"/>
         <image name="Pressed sensors button" width="375" height="250"/>
@@ -401,6 +471,8 @@
         <image name="Vehicle status button" width="75" height="77"/>
         <image name="add list icon" width="41" height="28"/>
         <image name="fuel button" width="75" height="77"/>
+        <image name="okCellButton" width="558" height="174"/>
+        <image name="pressedOkCellButton" width="540" height="153"/>
         <image name="sensors button" width="375" height="260"/>
     </resources>
 </document>

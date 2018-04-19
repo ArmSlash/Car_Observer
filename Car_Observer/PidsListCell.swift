@@ -23,9 +23,6 @@ class PidsListCell: UITableViewCell {
         
         self.backgroundColor = UIColor.init(red: 131, green: 158, blue: 119, alpha: 100)
         
-        
-       
-        
         self.checkmarkImageView.layer.borderWidth = 0
         self.checkmarkImageView.layer.cornerRadius = 4
         self.checkmarkImageView.clipsToBounds = true

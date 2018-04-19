@@ -10,6 +10,8 @@
 		490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490022732082303300FAF1F6 /* PidsListViewController.swift */; };
 		4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227720836D8D00FAF1F6 /* PidsListCell.swift */; };
 		4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4900227B2085FED600FAF1F6 /* Assets.xcassets */; };
+		4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227D20861B0800FAF1F6 /* SensorsCell.swift */; };
+		4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */; };
 		49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; };
 		49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */; };
@@ -69,6 +71,8 @@
 		490022732082303300FAF1F6 /* PidsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidsListViewController.swift; sourceTree = "<group>"; };
 		4900227720836D8D00FAF1F6 /* PidsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidsListCell.swift; sourceTree = "<group>"; };
 		4900227B2085FED600FAF1F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4900227D20861B0800FAF1F6 /* SensorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsCell.swift; sourceTree = "<group>"; };
+		4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTableViewController.swift; sourceTree = "<group>"; };
 		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidSelectionViewController.swift; sourceTree = "<group>"; };
 		49DD8DA4207F6C140086E442 /* Car_Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car_Observer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,8 @@
 				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
 				490022732082303300FAF1F6 /* PidsListViewController.swift */,
 				4900227720836D8D00FAF1F6 /* PidsListCell.swift */,
+				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
+				4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */,
 				4900227B2085FED600FAF1F6 /* Assets.xcassets */,
 				49DD8DAB207F6C140086E442 /* Main.storyboard */,
 				49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */,
@@ -246,6 +252,8 @@
 				49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */,
 				49DD8DB0207F6C140086E442 /* Car_Observer.xcdatamodeld in Sources */,
 				4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */,
+				4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */,
+				4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

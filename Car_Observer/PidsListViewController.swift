@@ -92,8 +92,6 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
             self.performSegue(withIdentifier: "unwindToPidSelection", sender: self)
         }
     }
-
-
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
        
