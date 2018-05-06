@@ -14,7 +14,7 @@ class PidSelectionViewController: UIViewController, UIPopoverPresentationControl
     @IBOutlet var vehicleStatPidButton: UIButton!
     @IBOutlet var gasPidButton: UIButton!
     @IBOutlet var outsideParamPidbutton: UIButton!
-    var pidsToScan : NSArray = []
+    var pidsToScan : [Int] = []
     
     
     
@@ -61,10 +61,10 @@ class PidSelectionViewController: UIViewController, UIPopoverPresentationControl
             default:break
             }
             
-            let popWidth = Int((self.view.bounds.width/3)*2)
-            let popHeight = Int((64 * popoverView.pidsArray.count)+4)
+            let width = Int((self.view.bounds.width/3)*2)
+            let height = Int((64 * popoverView.pidsArray.count)+4)
             
-            popoverView.preferredContentSize = CGSize(width: popWidth, height: popHeight)
+            popoverView.preferredContentSize = CGSize(width: width, height: height)
             
             self.present(popoverView, animated: true, completion: nil)
         }

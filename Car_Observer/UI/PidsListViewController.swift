@@ -13,8 +13,8 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var tableView: UITableView!
     
-    var pidsArray : NSArray = []
-    var selectedPids : NSArray = []
+    var pidsArray : [Int] = []
+    var selectedPids : [Int] = []
     
     
     
@@ -55,7 +55,7 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
         cellIdentifire = "pidCell"
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifire as String) as? PidsListCell
         
-        let pid = pidsArray.object(at: indexPath.section) as! Int
+        let pid = pidsArray[indexPath.section]
         
         let imageName = PidDisplayManager.imageFor(pid: pid)
         let pidDescription = PidDisplayManager.descriptionFor(pid: pid)
