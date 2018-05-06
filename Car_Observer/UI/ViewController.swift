@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     
     static var host = "192.168.0.10"
     static var port = 35000
-    
-    let obd = OBD2(host: host, port: port)
-    
+    let sharedScanner = SharedScanner.shared
     @IBOutlet var connectButton: UIButton!
     
     
@@ -31,15 +29,12 @@ class ViewController: UIViewController {
 
 
     @IBAction func connection(_ sender: Any) {
-        
-        obd.connect { (success, error) in
-            OperationQueue.main.addOperation({
-                if let error = error {
-                print("OBD connection failed with \(error)")
-                    
-                }
-            })
-        }
+       sharedScanner.connect()
+    }
+    @IBAction func sendRequest(_ sender: UIButton) {
+       
+        sharedScanner.requestTroubleCode()
+        print("_________trubleCodes_________")
     }
     
 }

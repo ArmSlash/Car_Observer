@@ -15,6 +15,7 @@ protocol ScanDelegate {
 
 open class OBD2 {
     
+    
     public typealias CallBack = (Bool, Error?) -> ()
     
     private(set) var host : String

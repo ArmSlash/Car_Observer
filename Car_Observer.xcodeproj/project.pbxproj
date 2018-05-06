@@ -12,9 +12,11 @@
 		4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4900227B2085FED600FAF1F6 /* Assets.xcassets */; };
 		4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227D20861B0800FAF1F6 /* SensorsCell.swift */; };
 		4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */; };
+		491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491699C0209D843400DFF7C0 /* PidDisplayManager.swift */; };
 		49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; };
 		49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */; };
+		49DAC138208C9B07008F5D30 /* SharedScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC137208C9B07008F5D30 /* SharedScanner.swift */; };
 		49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA7207F6C140086E442 /* AppDelegate.swift */; };
 		49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA9207F6C140086E442 /* ViewController.swift */; };
 		49DD8DAD207F6C140086E442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DAB207F6C140086E442 /* Main.storyboard */; };
@@ -73,8 +75,10 @@
 		4900227B2085FED600FAF1F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4900227D20861B0800FAF1F6 /* SensorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsCell.swift; sourceTree = "<group>"; };
 		4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTableViewController.swift; sourceTree = "<group>"; };
+		491699C0209D843400DFF7C0 /* PidDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidDisplayManager.swift; sourceTree = "<group>"; };
 		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidSelectionViewController.swift; sourceTree = "<group>"; };
+		49DAC137208C9B07008F5D30 /* SharedScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedScanner.swift; sourceTree = "<group>"; };
 		49DD8DA4207F6C140086E442 /* Car_Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car_Observer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD8DA7207F6C140086E442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DD8DA9207F6C140086E442 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		49DAC13B208CF95D008F5D30 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				49DD8DA9207F6C140086E442 /* ViewController.swift */,
+				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
+				490022732082303300FAF1F6 /* PidsListViewController.swift */,
+				4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */,
+				49DAC13C208CF97F008F5D30 /* Cell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		49DAC13C208CF97F008F5D30 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4900227720836D8D00FAF1F6 /* PidsListCell.swift */,
+				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
+				491699C0209D843400DFF7C0 /* PidDisplayManager.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		49DD8D9B207F6C140086E442 = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				49DD8DA7207F6C140086E442 /* AppDelegate.swift */,
-				49DD8DA9207F6C140086E442 /* ViewController.swift */,
-				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
-				490022732082303300FAF1F6 /* PidsListViewController.swift */,
-				4900227720836D8D00FAF1F6 /* PidsListCell.swift */,
-				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
-				4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */,
+				49DAC137208C9B07008F5D30 /* SharedScanner.swift */,
+				49DAC13B208CF95D008F5D30 /* UI */,
 				4900227B2085FED600FAF1F6 /* Assets.xcassets */,
 				49DD8DAB207F6C140086E442 /* Main.storyboard */,
 				49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */,
@@ -247,12 +269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */,
+				49DAC138208C9B07008F5D30 /* SharedScanner.swift in Sources */,
 				49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */,
 				49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */,
 				49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */,
 				49DD8DB0207F6C140086E442 /* Car_Observer.xcdatamodeld in Sources */,
 				4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */,
 				4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */,
+				491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */,
 				4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,11 +417,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WUZ6U6J43R;
+				DEVELOPMENT_TEAM = 25VKW38T23;
 				INFOPLIST_FILE = Car_Observer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eSperApps.Car-Observer";
+				PRODUCT_BUNDLE_IDENTIFIER = "-tune8.Car-Observer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -411,11 +435,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WUZ6U6J43R;
+				DEVELOPMENT_TEAM = 25VKW38T23;
 				INFOPLIST_FILE = Car_Observer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eSperApps.Car-Observer";
+				PRODUCT_BUNDLE_IDENTIFIER = "-tune8.Car-Observer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -8,9 +8,12 @@
 
 import UIKit
 
-class PidsListCell: UITableViewCell {
+@IBDesignable class PidsListCell: UITableViewCell {
     
-    
+    @IBInspectable var cornerRadius: CGFloat{
+        set{ layer.cornerRadius = newValue}
+        get{return layer.cornerRadius}
+    }
     
     @IBOutlet var pidImage: UIImageView!
     @IBOutlet var pidDescription: UILabel!
@@ -18,25 +21,41 @@ class PidsListCell: UITableViewCell {
     
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.backgroundColor = UIColor.init(red: 131, green: 158, blue: 119, alpha: 100)
+        self.setPidImageAppearance()
+        self.setCheckmarkImageViewAppearance()
+        
+    }
+    
+    private func setCheckmarkImageViewAppearance() {
         
         self.checkmarkImageView.layer.borderWidth = 0
         self.checkmarkImageView.layer.cornerRadius = 4
         self.checkmarkImageView.clipsToBounds = true
-        self.checkmarkImageView.backgroundColor = UIColor.lightText
+        self.checkmarkImageView.layer.backgroundColor = UIColor.lightText.cgColor
     }
-
+    
+    private func setPidImageAppearance() {
+        
+        self.pidImage.layer.borderWidth = 3
+        self.pidImage.layer.borderColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1).cgColor
+        self.pidImage.layer.cornerRadius = 12
+        self.pidImage.clipsToBounds = true
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if selected == true{
+        if selected == true && self.reuseIdentifier == "pidCell"{
             self.checkmarkImageView.image = UIImage(named: "checkmarkIcon")
         }else{
             self.checkmarkImageView.image = UIImage()
         }
         
     }
-
+    
+    
+    
 }
