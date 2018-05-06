@@ -16,6 +16,8 @@ class PidSelectionViewController: UIViewController, UIPopoverPresentationControl
     @IBOutlet var outsideParamPidbutton: UIButton!
     var pidsToScan : [Int] = []
     
+    let darkView = UIView()
+    
     
     
     override func viewDidLoad() {
@@ -26,6 +28,7 @@ class PidSelectionViewController: UIViewController, UIPopoverPresentationControl
     
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         //do som stuff from the popover
+         darkView.removeFromSuperview()
     }
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         
@@ -34,7 +37,7 @@ class PidSelectionViewController: UIViewController, UIPopoverPresentationControl
     
     
     @IBAction func unwindToPidSelection(segue : UIStoryboardSegue){
-        
+       
     }
     
     
@@ -65,7 +68,11 @@ class PidSelectionViewController: UIViewController, UIPopoverPresentationControl
             let height = Int((64 * popoverView.pidsArray.count)+4)
             
             popoverView.preferredContentSize = CGSize(width: width, height: height)
-            
+            let frame = self.view.bounds
+            darkView.frame = frame
+            darkView.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+            darkView.isOpaque = false
+            self.view.addSubview(darkView)
             self.present(popoverView, animated: true, completion: nil)
         }
     }
