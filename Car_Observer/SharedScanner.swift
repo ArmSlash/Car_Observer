@@ -35,19 +35,19 @@ class SharedScanner {
         }
     }
  
-    func repeatRequest(pid:Int) {
+    func repeatRequestFor(pid:Int) {
        // for pid in pidsArray{
             let pidForRequest = pid 
             let command = Command.Mode01.pid(number: pidForRequest)
-            if obd.isRepeating(repeat: command) {
-                obd.stop(repeat: command)
-            } else {
+            //if obd.isRepeating(repeat: command) {
+             //   obd.stop(repeat: command)
+           // } else {
                 obd.request(repeat: command)
-            }
+          //  }
        // }
     }
     
-    func request(pid:Int) {
+    func requestFor(pid:Int) {
         let pidForRequest = pid
         obd.request(command: Command.Mode01.pid(number: pidForRequest)) { (descriptor) in
             let respStr = descriptor?.value(metric: true)
@@ -59,10 +59,19 @@ class SharedScanner {
     
     func requestTroubleCode() {
         obd.request(command: Command.Mode03.troubleCode) { (descriptor) in
-            let respStr = descriptor?.troubleCodeCount()
+            let respStr = descriptor?.getTroubleCodes()
+            
             print(respStr ?? "No value")
         }
     }
+    
+    func custom(){
+        obd.request(command: Command.Mode09.vin) { (descriptor) in
+            let respStr = descriptor?.VIN()
+            print("............\(String(describing: respStr))....................")
+        }
+    }
+    
     
     func pause() {
         obd.pauseScan()
@@ -71,5 +80,7 @@ class SharedScanner {
     func resume() {
         obd.resumeScan()
     }
-    
+    func stopScan(){
+        obd.stopScan()
+    }
 }

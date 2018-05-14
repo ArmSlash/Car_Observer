@@ -26,15 +26,15 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         
     }
-
-
+    
+    
     @IBAction func connection(_ sender: Any) {
-       sharedScanner.connect()
+        if !sharedScanner.isConnected{
+            sharedScanner.connect()
+        }
     }
     @IBAction func sendRequest(_ sender: UIButton) {
-       
-        sharedScanner.requestTroubleCode()
-        print("_________trubleCodes_________")
+        
     }
     
 }

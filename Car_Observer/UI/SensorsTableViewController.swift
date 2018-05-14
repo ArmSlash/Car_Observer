@@ -11,26 +11,19 @@ import OBD2Swift
 
 class SensorsTableViewController: UITableViewController {
     
-    let observer = Observer<Command.Mode01>()
+    var observers = [Int : ObserverType]()
     
     
-    var sensorsToShow = [12, 13]
+    var sensorsToShow : [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        observer.observe(command: .pid(number: 12)) { (descriptor) in
-            let respStr = descriptor?.value(metric: true)
-            print("Observer : \(String(describing: respStr))")
-        }
-        
-        ObserverQueue.shared.register(observer: observer)
-        
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "SensorsBackground"))
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        ObserverQueue.shared.unregister(observer: observer)
+        let sharedScanner = SharedScanner.shared
+        sharedScanner.stopScan()
     }
     
     
@@ -61,13 +54,47 @@ class SensorsTableViewController: UITableViewController {
             cellIdentifire = "SensorCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire as String, for: indexPath) as! SensorsCell
             cell.backgroundView = UIImageView(image: UIImage(named: "SensorCell"))
-            let sharedScanner = SharedScanner.shared
-            cell.sensorDataLabel.text = "\(sharedScanner.resp)"
+            
+            let pid = sensorsToShow[indexPath.section]
+            
+            let observer = Observer<Command.Mode01>()
+            ObserverQueue.shared.register(observer: observer)
+            let key = indexPath.section
+            observers[key] = observer
+            observer.observe(command: .pid(number: pid)) { (descriptor) in
+                let respStr = descriptor?.valueMetrics
+                let unitStr = descriptor?.unitMetric
+                let sensorsName = descriptor?.response
+                let defoultStr = 0.0
+                var gotresponce = false
+                if sensorsName != nil{
+                    gotresponce = true
+                }
+                print("Observer : \(String(describing: respStr))")
+                DispatchQueue.main.async{
+                    cell.sensorDataLabel.text = "\(respStr ?? Float(defoultStr))" + " " + unitStr!
+                    cell.sensorsNameLabel.textColor = UIColor.white
+                    cell.sensorsNameLabel.text = "\(gotresponce)"
+                    
+                }
+                
+                
+            }
             return cell
         default:
             cellIdentifire = "okButtonCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire as String, for: indexPath) as UITableViewCell
             return cell
+        }
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let key = indexPath.section
+        let observer = observers[key]
+        if observer != nil{
+            ObserverQueue.shared.unregister(observer: observer!)
+            observers.removeValue(forKey: key)
         }
     }
     

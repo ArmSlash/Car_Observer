@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OBD2Swift
 
 class PidsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -14,7 +15,7 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var tableView: UITableView!
     
     var pidsArray : [Int] = []
-    var selectedPids : [Int] = []
+    let observer = Observer<Command.Mode01>()
     
     
     
@@ -25,7 +26,7 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.backgroundColor = UIColor.clear
         self.tableView.bounces = false
         self.tableView.isUserInteractionEnabled = true
-        
+        ObserverQueue.shared.register(observer: observer)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,6 +49,7 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
         return 60
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cellIdentifire : NSString
@@ -57,32 +59,30 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
         
         let pid = pidsArray[indexPath.section]
         
-        let imageName = PidDisplayManager.imageFor(pid: pid)
-        let pidDescription = PidDisplayManager.descriptionFor(pid: pid)
+        let imageName = PidDisplayManager.image(for: pid)
+        let pidDescription = PidDisplayManager.description(for: pid)
         
         cell?.pidImage.image = UIImage(named: imageName)
         cell?.pidDescription.text = pidDescription
+        let sharedScanner = SharedScanner.shared
         
+        if !sharedScanner.isConnected{
+            cell?.metricsLabel.text = "No Connection..."
+        }else{
+            observer.observe(command: .pid(number: pid)) { (descriptor) in
+                let respStr = descriptor?.valueMetrics
+                let unitStr = descriptor?.unitMetric
+                
+                let scanResult = "\(respStr ?? 0)" + " " + unitStr!
+                DispatchQueue.main.async{
+                cell?.metricsLabel.text =  scanResult
+                }
+            }
+            
+        }
         return cell!
     }
-    
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        ObserverQueue.shared.unregister(observer: observer)
     }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-    }
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
-    
 }

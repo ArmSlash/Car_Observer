@@ -14,7 +14,7 @@ public class ObserverType : NSObject {}
 // To bring Observer alive you must register it in ObserverQueue
 // unregister func deactivates observer
 
-public class Observer<T : CommandType> : ObserverType {
+public class  Observer<T : CommandType> : ObserverType {
     private typealias DescriptorCallBack = (_ descriptor : T.Descriptor?)->()
     private typealias DescriptorArray = [(DescriptorCallBack)?]
     
@@ -27,6 +27,7 @@ public class Observer<T : CommandType> : ObserverType {
         observers[key] = flatAray
         observers[key]?.append(block)
     }
+   
     
     func dispatch(command : T, response : Response){
         let described = T.Descriptor(describe: response)
@@ -64,6 +65,7 @@ public class ObserverQueue {
     
     open func unregister(observer : ObserverType){
         observers.remove(observer)
+        
     }
     
     func dispatch<T : CommandType>(command : T, response : Response) {

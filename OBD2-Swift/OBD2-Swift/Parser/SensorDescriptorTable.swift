@@ -411,7 +411,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
     /* PID 0x20: List Supported PIDs 0x21-0x3F */
     /* No calculation or conversion */
     SensorDescriptor(0x20,
-                     "List Supported PIDs", "Supported PIDs",
+                     "List Supported PIDs",
+                     "Supported PIDs",
                      "",
                      0,
                      0,

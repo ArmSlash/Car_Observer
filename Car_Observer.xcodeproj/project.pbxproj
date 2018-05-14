@@ -75,6 +75,7 @@
 		4900227B2085FED600FAF1F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4900227D20861B0800FAF1F6 /* SensorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsCell.swift; sourceTree = "<group>"; };
 		4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTableViewController.swift; sourceTree = "<group>"; };
+		490AFAE220A011A500B8E868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		491699C0209D843400DFF7C0 /* PidDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidDisplayManager.swift; sourceTree = "<group>"; };
 		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidSelectionViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				49DD8DAC207F6C140086E442 /* Base */,
+				490AFAE220A011A500B8E868 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

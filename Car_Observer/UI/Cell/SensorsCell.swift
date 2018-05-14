@@ -12,6 +12,7 @@ class SensorsCell: UITableViewCell {
 
     @IBOutlet var sensorIconView: UIImageView!
     @IBOutlet var sensorDataLabel: UILabel!
+    @IBOutlet var sensorsNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,7 +9,7 @@
 import Foundation
 class PidDisplayManager{
     
-    static func imageFor(pid: Int)->(String){
+    static func image(for pid: Int)->(String){
         var imageName = ""
         switch pid {
         case 4:
@@ -20,8 +20,6 @@ class PidDisplayManager{
             imageName = "Time"
         case 33:
             imageName = "Check Time"
-        case 92:
-            imageName = "Oil Temp"
         case 47:
             imageName = "Fuel Level"
         case 5:
@@ -40,7 +38,7 @@ class PidDisplayManager{
         return imageName
     }
     
-    static func descriptionFor(pid: Int)->(String){
+    static func description(for pid: Int)->(String){
         var pidDescription = ""
         switch pid {
         case 4:
@@ -51,8 +49,6 @@ class PidDisplayManager{
             pidDescription = "Run time since engine start"
         case 33:
             pidDescription = "Distance traveled with malfunction indicator lamp (MIL) on"
-        case 92:
-            pidDescription = "Engine oil temperature"
         case 47:
             pidDescription = "Fuel Tank Level Input"
         case 5:

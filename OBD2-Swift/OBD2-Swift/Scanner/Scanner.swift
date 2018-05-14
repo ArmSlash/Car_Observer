@@ -162,7 +162,7 @@ class `Scanner`: StreamHolder {
     
     open func cancelScan() {
         repeatCommands.removeAll()
-        obdQueue.cancelAllOperations()
+        //obdQueue.cancelAllOperations()
     }
     
     open func disconnect() {
