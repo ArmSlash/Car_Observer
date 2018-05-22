@@ -167,6 +167,7 @@ class `Scanner`: StreamHolder {
     
     open func disconnect() {
         cancelScan()
+        obdQueue.cancelAllOperations()
         inputStream.close()
         outputStream.close()
         state = .none

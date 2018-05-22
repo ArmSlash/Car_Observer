@@ -13,6 +13,8 @@
 		4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227D20861B0800FAF1F6 /* SensorsCell.swift */; };
 		4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */; };
 		491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491699C0209D843400DFF7C0 /* PidDisplayManager.swift */; };
+		4933EF1E20ACA0D400883EE9 /* ConnIndicatorWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */; };
+		4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */; };
 		49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; };
 		49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */; };
@@ -77,6 +79,8 @@
 		4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTableViewController.swift; sourceTree = "<group>"; };
 		490AFAE220A011A500B8E868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		491699C0209D843400DFF7C0 /* PidDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidDisplayManager.swift; sourceTree = "<group>"; };
+		4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnIndicatorWithButton.swift; sourceTree = "<group>"; };
+		4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidSelectionViewController.swift; sourceTree = "<group>"; };
 		49DAC137208C9B07008F5D30 /* SharedScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedScanner.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
 				490022732082303300FAF1F6 /* PidsListViewController.swift */,
 				4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */,
+				4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */,
+				4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */,
 				49DAC13C208CF97F008F5D30 /* Cell */,
 			);
 			path = UI;
@@ -270,11 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */,
+				4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */,
 				49DAC138208C9B07008F5D30 /* SharedScanner.swift in Sources */,
 				49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */,
 				49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */,
 				49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */,
 				49DD8DB0207F6C140086E442 /* Car_Observer.xcdatamodeld in Sources */,
+				4933EF1E20ACA0D400883EE9 /* ConnIndicatorWithButton.swift in Sources */,
 				4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */,
 				4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */,
 				491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */,

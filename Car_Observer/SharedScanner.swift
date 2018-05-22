@@ -9,7 +9,13 @@
 import Foundation
 import OBD2Swift
 
+protocol ScannerDelegate: class {
+    func scannerIsConnected()
+}
+
 class SharedScanner {
+    
+   weak var delegate:ScannerDelegate?
     
     var resp : Float = 0
     var isConnected = false
@@ -29,6 +35,8 @@ class SharedScanner {
                 }else{
                     print("************** CONNECTED ***********")
                     self.isConnected = true
+                    self.delegate?.scannerIsConnected()
+                    
                 }
                 
             })
@@ -60,8 +68,10 @@ class SharedScanner {
     func requestTroubleCode() {
         obd.request(command: Command.Mode03.troubleCode) { (descriptor) in
             let respStr = descriptor?.getTroubleCodes()
+            let resp2 = descriptor?.troubleCodeCount()
             
             print(respStr ?? "No value")
+            print(resp2 ?? "no")
         }
     }
     

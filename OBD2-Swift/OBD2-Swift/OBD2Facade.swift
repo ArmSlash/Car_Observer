@@ -49,6 +49,9 @@ open class OBD2 {
         }
     }
     
+    public func supportedSensorList() -> ([Int]){ 
+        return scanner.supportedSensorList
+    }
     
     /// Disconnect from OBD
     public func disconnect() {

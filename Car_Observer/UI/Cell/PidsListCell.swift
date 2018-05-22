@@ -47,7 +47,8 @@ import UIKit
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.5,
+                           animations: {
                 self.pidDescription.layer.opacity = 0
                 
                 let newX = self.pidImage.layer.frame.minX + (self.contentView.layer.bounds.width - self.pidImage.layer.frame.maxX)
@@ -59,7 +60,8 @@ import UIKit
                 self.metricsLabel.layer.opacity = 1
             })
         }else{
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.5,
+                           animations: {
                 self.metricsLabel.layer.opacity = 0
                 
                 self.pidImage.layer.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
