@@ -8,45 +8,63 @@
 
 import Foundation
 
-
 protocol ScanDelegate {
     func didReceive()
 }
 
-open class OBD2 {
+public class OBD2 {
     
+ public enum ConnectionParam{
+        case host
+        case port
+    }
+    
+  public static let shared = OBD2()
     
     public typealias CallBack = (Bool, Error?) -> ()
     
-    private(set) var host : String
-    private(set) var port : Int
     
-    private var scanner : Scanner
+   public private(set) var isConnected = false
     
+    private var scanner : Scanner!
     public var stateChanged: StateChangeCallback? {
         didSet {
             scanner.stateChanged = stateChanged
         }
     }
     
-    public convenience init(){
-        self.init(host : "192.168.0.10", port : 35000)
-    }
-    
-    public init(host : String, port : Int){
-        self.host = host
-        self.port = port
-        
-        self.scanner = Scanner(host: host, port: port)
-    }
+
+        public init(){
+            self.scanner = Scanner()
+        }
     
     var logger : Any?
     var cache : Any?
     
     public func connect(_ block : @escaping CallBack){
+        let host = connectionSettings().host
+        let port = connectionSettings().port
+        
+        self.scanner.host = host
+        self.scanner.port = port
+        
         scanner.startScan { (success, error) in
+            self.isConnected = success
             block(success, error)
         }
+    }
+    
+    public func connectionSettings()->(host:String, port:Int){
+        var host = "192.168.0.10"
+        var port = 35000
+        
+        if UserDefaults.standard.value(forKey: "host") != nil {
+            host = UserDefaults.standard.value(forKey: "host") as! String
+        }
+        if UserDefaults.standard.integer(forKey: "port") != 0{
+            port = UserDefaults.standard.integer(forKey: "port")
+        }
+        return (host, port)
     }
     
     public func supportedSensorList() -> ([Int]){ 
@@ -55,6 +73,7 @@ open class OBD2 {
     
     /// Disconnect from OBD
     public func disconnect() {
+        self.isConnected = false
         scanner.disconnect()
     }
     

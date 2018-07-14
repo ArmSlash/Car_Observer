@@ -84,7 +84,9 @@ class StreamReader {
             
             return true
         }
+       
         return false
+        
     }
 }
 

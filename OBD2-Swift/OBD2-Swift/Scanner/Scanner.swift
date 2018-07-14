@@ -35,7 +35,9 @@ class `Scanner`: StreamHolder {
             if state == .none {
                 obdQueue.cancelAllOperations()
             }
+            
             stateChanged?(state)
+            
         }
     }
     
@@ -45,10 +47,16 @@ class `Scanner`: StreamHolder {
     
     var currentPIDGroup: UInt8 = 0x00
     
-    init(host: String, port: Int) {
+//    init(host: String, port: Int) {
+//        super.init()
+//        self.host = host
+//        self.port = port
+//
+//        delegate = self
+//    }
+    
+    override init() {
         super.init()
-        self.host = host
-        self.port = port
         
         delegate = self
     }
@@ -94,6 +102,7 @@ class `Scanner`: StreamHolder {
             print("Request operation completed")
             if let error = request.error {
                 self?.state = .none
+                print(error)
             } else {
                 guard let strong = self else { return }
                 if strong.repeatCommands.contains(command) {

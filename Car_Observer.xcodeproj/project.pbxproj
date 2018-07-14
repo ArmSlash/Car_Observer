@@ -7,26 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203CEF9F1C4C9A212EF41639 /* Pods_Car_Observer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0A51FEBAE1C9548FFD99FC /* Pods_Car_Observer.framework */; };
 		490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490022732082303300FAF1F6 /* PidsListViewController.swift */; };
 		4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227720836D8D00FAF1F6 /* PidsListCell.swift */; };
 		4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4900227B2085FED600FAF1F6 /* Assets.xcassets */; };
 		4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227D20861B0800FAF1F6 /* SensorsCell.swift */; };
-		4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */; };
+		4900228020861B2000FAF1F6 /* TroubleCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */; };
 		491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491699C0209D843400DFF7C0 /* PidDisplayManager.swift */; };
+		492AB49920C7D4D3007CD853 /* ResetButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */; };
+		492AB4D120D90FB3007CD853 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492AB4C420D90F9F007CD853 /* SQLite.framework */; };
+		492AB4D220D90FB3007CD853 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492AB4C420D90F9F007CD853 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4933EF1E20ACA0D400883EE9 /* ConnIndicatorWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */; };
+		4941E58C20B8742900A6BB87 /* MenuSubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941E58B20B8742800A6BB87 /* MenuSubButton.swift */; };
+		494EF22A20F23FAC00F4FD97 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EF22920F23FAC00F4FD97 /* Page.swift */; };
 		4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */; };
+		4951DDEC20E65BDE0035148E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951DDEB20E65BDE0035148E /* IntroViewController.swift */; };
+		4951DDF820E7F01A0035148E /* ConnectionInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951DDF720E7F01A0035148E /* ConnectionInspector.swift */; };
+		4951DDFA20E822BF0035148E /* DarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951DDF920E822BF0035148E /* DarkView.swift */; };
+		4951DDFC20E8DBF60035148E /* ResetPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951DDFB20E8DBF60035148E /* ResetPopoverVC.swift */; };
+		4951DE0120ED3C700035148E /* Page.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4951DE0020ED3C700035148E /* Page.xib */; };
+		4957D7FE20D92D540087F06C /* obd-trouble-codes.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4957D7FD20D92D530087F06C /* obd-trouble-codes.sqlite3 */; };
 		49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; };
 		49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */; };
-		49DAC138208C9B07008F5D30 /* SharedScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC137208C9B07008F5D30 /* SharedScanner.swift */; };
 		49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA7207F6C140086E442 /* AppDelegate.swift */; };
-		49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA9207F6C140086E442 /* ViewController.swift */; };
+		49DD8DAA207F6C140086E442 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DA9207F6C140086E442 /* MainMenuViewController.swift */; };
 		49DD8DAD207F6C140086E442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DAB207F6C140086E442 /* Main.storyboard */; };
 		49DD8DB0207F6C140086E442 /* Car_Observer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49DD8DAE207F6C140086E442 /* Car_Observer.xcdatamodeld */; };
 		49DD8DBF207F76E10086E442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		492AB4C320D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		492AB4C520D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		492AB4C720D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		492AB4C920D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		492AB4CB20D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		492AB4CD20D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		492AB4CF20D90F9F007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+		492AB4D320D90FB3007CD853 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
 		49D1C39A20810EE0009CF4DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
@@ -64,6 +131,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				492AB4D220D90FB3007CD853 /* SQLite.framework in Embed Frameworks */,
 				49D1C3A120810F11009CF4DD /* OBD2Swift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -72,25 +140,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B0A51FEBAE1C9548FFD99FC /* Pods_Car_Observer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Car_Observer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490022732082303300FAF1F6 /* PidsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidsListViewController.swift; sourceTree = "<group>"; };
 		4900227720836D8D00FAF1F6 /* PidsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidsListCell.swift; sourceTree = "<group>"; };
 		4900227B2085FED600FAF1F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4900227D20861B0800FAF1F6 /* SensorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsCell.swift; sourceTree = "<group>"; };
-		4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTableViewController.swift; sourceTree = "<group>"; };
+		4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroubleCodesViewController.swift; sourceTree = "<group>"; };
 		490AFAE220A011A500B8E868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		491699C0209D843400DFF7C0 /* PidDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidDisplayManager.swift; sourceTree = "<group>"; };
+		492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonCell.swift; sourceTree = "<group>"; };
+		492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnIndicatorWithButton.swift; sourceTree = "<group>"; };
+		4941E58B20B8742800A6BB87 /* MenuSubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSubButton.swift; sourceTree = "<group>"; };
+		494EF22920F23FAC00F4FD97 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		4951DDEB20E65BDE0035148E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4951DDF720E7F01A0035148E /* ConnectionInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInspector.swift; sourceTree = "<group>"; };
+		4951DDF920E822BF0035148E /* DarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkView.swift; sourceTree = "<group>"; };
+		4951DDFB20E8DBF60035148E /* ResetPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPopoverVC.swift; sourceTree = "<group>"; };
+		4951DE0020ED3C700035148E /* Page.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page.xib; sourceTree = "<group>"; };
+		4957D7FD20D92D530087F06C /* obd-trouble-codes.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "obd-trouble-codes.sqlite3"; path = "../../../obd-trouble-codes.sqlite3"; sourceTree = "<group>"; };
 		49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OBD2Swift.xcodeproj; path = "OBD2-Swift/OBD2Swift.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidSelectionViewController.swift; sourceTree = "<group>"; };
-		49DAC137208C9B07008F5D30 /* SharedScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedScanner.swift; sourceTree = "<group>"; };
 		49DD8DA4207F6C140086E442 /* Car_Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car_Observer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD8DA7207F6C140086E442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49DD8DA9207F6C140086E442 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49DD8DA9207F6C140086E442 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		49DD8DAC207F6C140086E442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DD8DAF207F6C140086E442 /* Car_Observer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Car_Observer.xcdatamodel; sourceTree = "<group>"; };
 		49DD8DB6207F6C140086E442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CDCB4E7AB450945C7ABB059 /* Pods-Car_Observer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car_Observer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Car_Observer/Pods-Car_Observer.release.xcconfig"; sourceTree = "<group>"; };
+		58CA868BFB0AFFEBCA3F23CA /* Pods-Car_Observer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car_Observer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Car_Observer/Pods-Car_Observer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +178,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492AB4D120D90FB3007CD853 /* SQLite.framework in Frameworks */,
 				49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */,
+				203CEF9F1C4C9A212EF41639 /* Pods_Car_Observer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492AB4BA20D90F9F007CD853 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				492AB4C420D90F9F007CD853 /* SQLite.framework */,
+				492AB4C620D90F9F007CD853 /* SQLiteTests iOS.xctest */,
+				492AB4C820D90F9F007CD853 /* SQLite.framework */,
+				492AB4CA20D90F9F007CD853 /* SQLiteTests Mac.xctest */,
+				492AB4CC20D90F9F007CD853 /* SQLite.framework */,
+				492AB4CE20D90F9F007CD853 /* SQLiteTests tvOS.xctest */,
+				492AB4D020D90F9F007CD853 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4941E58D20BEFD5B00A6BB87 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				49DD8DA9207F6C140086E442 /* MainMenuViewController.swift */,
+				4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */,
+				4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */,
+				4941E58B20B8742800A6BB87 /* MenuSubButton.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		4951DDFD20ECCCF80035148E /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				4951DDEB20E65BDE0035148E /* IntroViewController.swift */,
+				494EF22920F23FAC00F4FD97 /* Page.swift */,
+				4951DE0020ED3C700035148E /* Page.xib */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		4957D80320DD72F70087F06C /* PidSelectionMenu */ = {
+			isa = PBXGroup;
+			children = (
+				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
+				4951DDF920E822BF0035148E /* DarkView.swift */,
+				491699C0209D843400DFF7C0 /* PidDisplayManager.swift */,
+				4957D80420DD732C0087F06C /* PidList */,
+			);
+			path = PidSelectionMenu;
+			sourceTree = "<group>";
+		};
+		4957D80420DD732C0087F06C /* PidList */ = {
+			isa = PBXGroup;
+			children = (
+				490022732082303300FAF1F6 /* PidsListViewController.swift */,
+				4900227720836D8D00FAF1F6 /* PidsListCell.swift */,
+			);
+			path = PidList;
+			sourceTree = "<group>";
+		};
+		4957D80520DD73690087F06C /* TroubleCodeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */,
+				4951DDFB20E8DBF60035148E /* ResetPopoverVC.swift */,
+				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
+				492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */,
+			);
+			path = TroubleCodeMenu;
+			sourceTree = "<group>";
+		};
 		49D1C39520810EE0009CF4DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,25 +266,12 @@
 		49DAC13B208CF95D008F5D30 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				49DD8DA9207F6C140086E442 /* ViewController.swift */,
-				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
-				490022732082303300FAF1F6 /* PidsListViewController.swift */,
-				4900227F20861B1F00FAF1F6 /* SensorsTableViewController.swift */,
-				4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */,
-				4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */,
-				49DAC13C208CF97F008F5D30 /* Cell */,
+				4941E58D20BEFD5B00A6BB87 /* MainMenu */,
+				4957D80320DD72F70087F06C /* PidSelectionMenu */,
+				4957D80520DD73690087F06C /* TroubleCodeMenu */,
+				4951DDFD20ECCCF80035148E /* Intro */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		49DAC13C208CF97F008F5D30 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				4900227720836D8D00FAF1F6 /* PidsListCell.swift */,
-				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
-				491699C0209D843400DFF7C0 /* PidDisplayManager.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		49DD8D9B207F6C140086E442 = {
@@ -144,6 +279,10 @@
 			children = (
 				49DD8DA6207F6C140086E442 /* Car_Observer */,
 				49DD8DA5207F6C140086E442 /* Products */,
+				49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */,
+				492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */,
+				B4BFD50172DEBE1C4D43659F /* Pods */,
+				ABE7260EE4FBE13A4DC16A96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,16 +298,33 @@
 			isa = PBXGroup;
 			children = (
 				49DD8DA7207F6C140086E442 /* AppDelegate.swift */,
-				49DAC137208C9B07008F5D30 /* SharedScanner.swift */,
+				4957D7FD20D92D530087F06C /* obd-trouble-codes.sqlite3 */,
+				4951DDF720E7F01A0035148E /* ConnectionInspector.swift */,
 				49DAC13B208CF95D008F5D30 /* UI */,
 				4900227B2085FED600FAF1F6 /* Assets.xcassets */,
 				49DD8DAB207F6C140086E442 /* Main.storyboard */,
 				49DD8DBE207F76E00086E442 /* LaunchScreen.storyboard */,
 				49DD8DB6207F6C140086E442 /* Info.plist */,
 				49DD8DAE207F6C140086E442 /* Car_Observer.xcdatamodeld */,
-				49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */,
 			);
 			path = Car_Observer;
+			sourceTree = "<group>";
+		};
+		ABE7260EE4FBE13A4DC16A96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B0A51FEBAE1C9548FFD99FC /* Pods_Car_Observer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4BFD50172DEBE1C4D43659F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58CA868BFB0AFFEBCA3F23CA /* Pods-Car_Observer.debug.xcconfig */,
+				4CDCB4E7AB450945C7ABB059 /* Pods-Car_Observer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DD8DB9207F6C140086E442 /* Build configuration list for PBXNativeTarget "Car_Observer" */;
 			buildPhases = (
+				AC91FA864EBAD95CF614842A /* [CP] Check Pods Manifest.lock */,
 				49DD8DA0207F6C140086E442 /* Sources */,
 				49DD8DA1207F6C140086E442 /* Frameworks */,
 				49DD8DA2207F6C140086E442 /* Resources */,
@@ -187,6 +344,7 @@
 			);
 			dependencies = (
 				49D1C3A320810F11009CF4DD /* PBXTargetDependency */,
+				492AB4D420D90FB3007CD853 /* PBXTargetDependency */,
 			);
 			name = Car_Observer;
 			productName = Car_Observer;
@@ -225,6 +383,10 @@
 					ProductGroup = 49D1C39520810EE0009CF4DD /* Products */;
 					ProjectRef = 49D1C39420810EE0009CF4DD /* OBD2Swift.xcodeproj */;
 				},
+				{
+					ProductGroup = 492AB4BA20D90F9F007CD853 /* Products */;
+					ProjectRef = 492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -234,6 +396,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		492AB4C420D90F9F007CD853 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 492AB4C320D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		492AB4C620D90F9F007CD853 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = 492AB4C520D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		492AB4C820D90F9F007CD853 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 492AB4C720D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		492AB4CA20D90F9F007CD853 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = 492AB4C920D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		492AB4CC20D90F9F007CD853 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 492AB4CB20D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		492AB4CE20D90F9F007CD853 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = 492AB4CD20D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		492AB4D020D90F9F007CD853 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 492AB4CF20D90F9F007CD853 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		49D1C39B20810EE0009CF4DD /* OBD2Swift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -264,11 +475,34 @@
 			files = (
 				49DD8DBF207F76E10086E442 /* LaunchScreen.storyboard in Resources */,
 				4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */,
+				4951DE0120ED3C700035148E /* Page.xib in Resources */,
+				4957D7FE20D92D540087F06C /* obd-trouble-codes.sqlite3 in Resources */,
 				49DD8DAD207F6C140086E442 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC91FA864EBAD95CF614842A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Car_Observer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49DD8DA0207F6C140086E442 /* Sources */ = {
@@ -277,14 +511,20 @@
 			files = (
 				490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */,
 				4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */,
-				49DAC138208C9B07008F5D30 /* SharedScanner.swift in Sources */,
-				49DD8DAA207F6C140086E442 /* ViewController.swift in Sources */,
+				492AB49920C7D4D3007CD853 /* ResetButtonCell.swift in Sources */,
+				49DD8DAA207F6C140086E442 /* MainMenuViewController.swift in Sources */,
+				4951DDFC20E8DBF60035148E /* ResetPopoverVC.swift in Sources */,
 				49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */,
 				49D1C3A520821BCF009CF4DD /* PidSelectionViewController.swift in Sources */,
+				4951DDFA20E822BF0035148E /* DarkView.swift in Sources */,
+				4941E58C20B8742900A6BB87 /* MenuSubButton.swift in Sources */,
+				4951DDF820E7F01A0035148E /* ConnectionInspector.swift in Sources */,
 				49DD8DB0207F6C140086E442 /* Car_Observer.xcdatamodeld in Sources */,
 				4933EF1E20ACA0D400883EE9 /* ConnIndicatorWithButton.swift in Sources */,
+				4951DDEC20E65BDE0035148E /* IntroViewController.swift in Sources */,
 				4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */,
-				4900228020861B2000FAF1F6 /* SensorsTableViewController.swift in Sources */,
+				494EF22A20F23FAC00F4FD97 /* Page.swift in Sources */,
+				4900228020861B2000FAF1F6 /* TroubleCodesViewController.swift in Sources */,
 				491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */,
 				4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */,
 			);
@@ -293,6 +533,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		492AB4D420D90FB3007CD853 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = 492AB4D320D90FB3007CD853 /* PBXContainerItemProxy */;
+		};
 		49D1C3A320810F11009CF4DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OBD2Swift;
@@ -422,6 +667,7 @@
 		};
 		49DD8DBA207F6C140086E442 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58CA868BFB0AFFEBCA3F23CA /* Pods-Car_Observer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -440,6 +686,7 @@
 		};
 		49DD8DBB207F6C140086E442 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CDCB4E7AB450945C7ABB059 /* Pods-Car_Observer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

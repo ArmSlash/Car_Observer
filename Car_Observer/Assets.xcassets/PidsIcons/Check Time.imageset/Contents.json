@@ -1,20 +1,6 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "9-part",
-        "center" : {
-          "mode" : "tile",
-          "width" : 1,
-          "height" : 1
-        },
-        "cap-insets" : {
-          "bottom" : 66,
-          "top" : 65,
-          "right" : 72,
-          "left" : 71
-        }
-      },
       "idiom" : "universal",
       "filename" : "Check Time.png",
       "scale" : "1x"
