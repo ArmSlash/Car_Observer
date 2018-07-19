@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		203CEF9F1C4C9A212EF41639 /* Pods_Car_Observer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0A51FEBAE1C9548FFD99FC /* Pods_Car_Observer.framework */; };
 		490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490022732082303300FAF1F6 /* PidsListViewController.swift */; };
 		4900227820836D8D00FAF1F6 /* PidsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227720836D8D00FAF1F6 /* PidsListCell.swift */; };
 		4900227C2085FEDC00FAF1F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4900227B2085FED600FAF1F6 /* Assets.xcassets */; };
@@ -18,6 +17,7 @@
 		492AB4D120D90FB3007CD853 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492AB4C420D90F9F007CD853 /* SQLite.framework */; };
 		492AB4D220D90FB3007CD853 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492AB4C420D90F9F007CD853 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4933EF1E20ACA0D400883EE9 /* ConnIndicatorWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */; };
+		493559B420FB139D00E13C90 /* TKAnimatedCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493559B320FB139D00E13C90 /* TKAnimatedCheckButton.swift */; };
 		4941E58C20B8742900A6BB87 /* MenuSubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941E58B20B8742800A6BB87 /* MenuSubButton.swift */; };
 		494EF22A20F23FAC00F4FD97 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EF22920F23FAC00F4FD97 /* Page.swift */; };
 		4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */; };
@@ -151,6 +151,7 @@
 		492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonCell.swift; sourceTree = "<group>"; };
 		492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnIndicatorWithButton.swift; sourceTree = "<group>"; };
+		493559B320FB139D00E13C90 /* TKAnimatedCheckButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKAnimatedCheckButton.swift; sourceTree = "<group>"; };
 		4941E58B20B8742800A6BB87 /* MenuSubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSubButton.swift; sourceTree = "<group>"; };
 		494EF22920F23FAC00F4FD97 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
@@ -180,7 +181,6 @@
 			files = (
 				492AB4D120D90FB3007CD853 /* SQLite.framework in Frameworks */,
 				49D1C3A020810F11009CF4DD /* OBD2Swift.framework in Frameworks */,
-				203CEF9F1C4C9A212EF41639 /* Pods_Car_Observer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +206,7 @@
 			children = (
 				49DD8DA9207F6C140086E442 /* MainMenuViewController.swift */,
 				4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */,
+				493559B320FB139D00E13C90 /* TKAnimatedCheckButton.swift */,
 				4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */,
 				4941E58B20B8742800A6BB87 /* MenuSubButton.swift */,
 			);
@@ -246,9 +247,9 @@
 			isa = PBXGroup;
 			children = (
 				4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */,
-				4951DDFB20E8DBF60035148E /* ResetPopoverVC.swift */,
 				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
 				492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */,
+				4951DDFB20E8DBF60035148E /* ResetPopoverVC.swift */,
 			);
 			path = TroubleCodeMenu;
 			sourceTree = "<group>";
@@ -339,6 +340,7 @@
 				49DD8DA1207F6C140086E442 /* Frameworks */,
 				49DD8DA2207F6C140086E442 /* Resources */,
 				49D1C38720810824009CF4DD /* Embed Frameworks */,
+				F3AD1124BB1FB2C43F15EC04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -502,6 +504,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3AD1124BB1FB2C43F15EC04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Car_Observer/Pods-Car_Observer-frameworks.sh",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Car_Observer/Pods-Car_Observer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -526,6 +544,7 @@
 				494EF22A20F23FAC00F4FD97 /* Page.swift in Sources */,
 				4900228020861B2000FAF1F6 /* TroubleCodesViewController.swift in Sources */,
 				491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */,
+				493559B420FB139D00E13C90 /* TKAnimatedCheckButton.swift in Sources */,
 				4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

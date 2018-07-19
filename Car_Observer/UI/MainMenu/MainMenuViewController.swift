@@ -17,7 +17,7 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
     
     
     private let mediumImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
-    private let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+   
     
     private let sharedScanner = OBD2.shared
     private let inspector = ConnectionInspector()
@@ -36,8 +36,8 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
         setNavigationBarAppearence()
         inspector.delegate = self
         startObservingScanerState()
-        
     }
+    
     
     private func startObservingScanerState(){
         sharedScanner.stateChanged  = {[weak self] state in
@@ -64,7 +64,6 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
                                                name: .UIApplicationDidEnterBackground,
                                                object: nil)
         mediumImpactFeedbackGenerator.prepare()
-        notificationFeedbackGenerator.prepare()
         addMainMenuButtons()
         addConnectionIndicator()
         
@@ -140,8 +139,7 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
                     self?.inspector.stop()
                     print("************** CONNECTED ***********")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self?.connectionIndicator?.changeToConnectedState()
-                        self?.notificationFeedbackGenerator.notificationOccurred(.success)
+                        self?.connectionIndicator?.changeToConnectedState()                       
                     }
                 }
             })
@@ -152,17 +150,18 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
     //MARK: Connection Alert
     
     fileprivate func createTextField(_ textField: (UITextField), for param:OBD2.ConnectionParam) {
-        textField.tag = 1
+       
         textField.keyboardAppearance = .dark
         textField.keyboardType = .numbersAndPunctuation
         textField.clearsOnBeginEditing = true
-        textField.autocorrectionType = .default
         textField.clearButtonMode = .whileEditing
         textField.delegate = self
         
         switch param {
         case .host: textField.placeholder = "Host IP: \(self.sharedScanner.connectionSettings().host)"
+                    textField.tag = 0
         case .port: textField.placeholder = "Port: \(self.sharedScanner.connectionSettings().port)"
+                    textField.tag = 1
         }
     }
     
@@ -184,16 +183,16 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
             self.createTextField(textField, for: .port)
         }
         
-        notificationFeedbackGenerator.notificationOccurred(.error)
        present(alert, animated: true, completion: nil)
     }
     
     //MARK: ConnectionInspectorDelegate
     
-    func obdConectionLost() {
-        self.connectionIndicator?.stopRotation()
-        self.sharedScanner.disconnect()
-        showAlert()
+    func noConnectiontoObd() {
+//        self.connectionIndicator?.stopRotation()
+       self.sharedScanner.disconnect()
+//        showAlert()
+        connectionIndicator?.changeToConnectedState()
     }
     
     // MARK: UITextFieldDelegate
@@ -208,7 +207,17 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
         case 1: UserDefaults.standard.set(Int(textField.text!), forKey:"port")
         default: return
         }
-        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let cSet = CharacterSet.decimalDigits.inverted
+        let compSepByCharInSet = string.components(separatedBy: cSet)
+        var char = compSepByCharInSet.joined(separator: ".")
+        if textField.tag == 1{
+         char = compSepByCharInSet.joined()
+        }
+        print(textField.tag)
+        return string == char
     }
     
     //MARK: MainMenuButtonDelegate

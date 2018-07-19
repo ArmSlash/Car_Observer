@@ -7,34 +7,37 @@
 //
 
 import Foundation
+import UIKit
 
 import OBD2Swift
 
 protocol ConnectionInspectorDelegate {
-    func obdConectionLost()
+    func noConnectiontoObd()
 }
 
 class ConnectionInspector{
     
     var delegate:ConnectionInspectorDelegate?
-    var timer = Timer()
-   
+    private var timer = Timer()
+    private let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
     var isObserving = false
-  
+    
     
     
     func waitForConnection(seconds:Double){
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(noConnection), userInfo: nil, repeats: false)
-        }
+        notificationFeedbackGenerator.prepare()
+    }
     
     func stop(){
         timer.invalidate()
     }
-        
+    
     @objc func noConnection(){
         print("no connection")
-        delegate?.obdConectionLost()
+       // notificationFeedbackGenerator.notificationOccurred(.error)
+        delegate?.noConnectiontoObd()
     }
     
     

@@ -14,9 +14,10 @@ class ConnIndicatorWithButton: UIView {
     let rotatingImageView = UIImageView()
     let connectionStatusLabel = UILabel()
     let connectButton = UIButton()
-  
-    var isRotating = false
+    private let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
     
+    var isRotating = false
+    private var checkbox:TKAnimatedCheckButton!
     
     
     
@@ -27,6 +28,10 @@ class ConnIndicatorWithButton: UIView {
         self.addSubview(setConnectionStatusLabel(for: self))
         self.addSubview(setConnectonButton(for: self))
         setConnectionIndicatorState(for: currentScannerState)
+        checkbox = TKAnimatedCheckButton(frame: rotatingImageView.frame)
+        checkbox.layer.opacity = 0
+        self.insertSubview(checkbox, at: 0)
+        notificationFeedbackGenerator.prepare()
     }
     
     
@@ -41,6 +46,7 @@ class ConnIndicatorWithButton: UIView {
         rotatingImageView.image = #imageLiteral(resourceName: "arrows")
         rotatingImageView.contentMode = .scaleAspectFit
         rotatingImageView.clipsToBounds = true
+        
         return rotatingImageView
     }
     
@@ -78,11 +84,12 @@ class ConnIndicatorWithButton: UIView {
         case .openingConnection: rotate()
         case .initializing: rotate()
         case .connected: changeButtonToConnectedState()
+            
         }
     }
     
     func changeToConnectedState(){
-        UIView.animate(withDuration: 0.8, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.changeButtonToConnectedState()
         }) {_ in
             if self.isRotating{
@@ -91,19 +98,28 @@ class ConnIndicatorWithButton: UIView {
             }
         }
     }
-   
+    
     private func changeButtonToConnectedState(){
-        self.rotatingImageView.layer.opacity = 0
-        let size = self.connectionStatusLabel.frame.size
-        let newX = self.connectionStatusLabel.frame.minX
-        let newY = self.connectionStatusLabel.frame.minY - 20
-        let origin = CGPoint(x: newX, y: newY)
-        self.connectionStatusLabel.textColor = #colorLiteral(red: 0.407540274, green: 1, blue: 0.3117388457, alpha: 1)
-        self.connectionStatusLabel.text = "OK"
-        self.connectionStatusLabel.frame = CGRect(origin: origin, size: size)
-        self.connectButton.setImage( #imageLiteral(resourceName: "greenObd "), for: .normal)
+        hideRotatingViewAndButton()
+        showChekbox()
     }
-
+    
+    private func hideRotatingViewAndButton(){
+        self.rotatingImageView.layer.opacity = 0
+        self.connectionStatusLabel.layer.opacity = 0
+        self.connectButton.layer.opacity = 0
+    }
+    
+    private func showChekbox() {
+        self.checkbox.layer.opacity = 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.checkbox.color = UIColor.green.cgColor
+            self.checkbox.checked = true
+            self.notificationFeedbackGenerator.notificationOccurred(.success)
+        }
+    }
+    
+    
     func rotate() {
         if !isRotating{
             isRotating = !isRotating
