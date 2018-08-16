@@ -143,10 +143,10 @@
                                         </constraints>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7S-qc-XKP">
-                                        <rect key="frame" x="311" y="52" width="40" height="40"/>
+                                        <rect key="frame" x="326" y="52" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="YU6-yn-kAf"/>
-                                            <constraint firstAttribute="width" constant="40" id="f4q-Na-IXZ"/>
+                                            <constraint firstAttribute="height" constant="25" id="YU6-yn-kAf"/>
+                                            <constraint firstAttribute="width" constant="25" id="f4q-Na-IXZ"/>
                                         </constraints>
                                         <state key="normal" image="cancel"/>
                                         <connections>
@@ -185,12 +185,12 @@
         <scene sceneID="8am-2K-sqv">
             <objects>
                 <tableViewController id="YtJ-cK-ucB" customClass="TroubleCodesViewController" customModule="Car_Observer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hx5-2t-pyA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hx5-2t-pyA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SensorCell" rowHeight="150" id="TN1-De-BjT" customClass="SensorsCell" customModule="Car_Observer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sensorCell" rowHeight="150" id="TN1-De-BjT" customClass="SensorsCell" customModule="Car_Observer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TN1-De-BjT" id="uxc-mg-P6a">
@@ -240,19 +240,97 @@
                                     <outlet property="troubleCodeLabel" destination="LZm-eb-wAd" id="gJl-lx-iN8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="resetButtonCell" rowHeight="51" id="omq-PT-zmr" customClass="ResetButtonCell" customModule="Car_Observer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="178" width="375" height="51"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="bigCell" rowHeight="330" id="omq-PT-zmr" userLabel="bigCell" customClass="BigCell" customModule="Car_Observer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="178" width="375" height="330"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="omq-PT-zmr" id="Zc4-oT-RKr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="74O-q7-83Q">
+                                            <rect key="frame" x="34" y="61" width="307" height="209"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="307" id="Kbf-R8-hAX"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="209" id="bCV-Yk-JFr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkArrows" translatesAutoresizingMaskIntoConstraints="NO" id="VAU-MR-7s7">
+                                            <rect key="frame" x="112" y="90" width="150" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="150" id="Uhc-uj-BCh"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="150" id="cHz-AU-TCL"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-31-uKZ">
+                                            <rect key="frame" x="136" y="131" width="103" height="68"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="103" id="Gwl-ij-dRA"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="68" id="gGG-Vz-1l5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineOk" translatesAutoresizingMaskIntoConstraints="NO" id="e4v-nP-Zck">
+                                            <rect key="frame" x="136" y="114" width="103" height="103"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="150" id="a8a-dC-qAo"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="150" id="pMV-is-dzM"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There's no critical Trouble Codes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI8-vU-ous">
+                                            <rect key="frame" x="112" y="61" width="150" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="BD9-j9-39d"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="150" id="m8f-4Y-le0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.74509803921568629" green="0.75686274509803919" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.74509803921568629" green="0.75686274509803919" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="74O-q7-83Q" firstAttribute="leading" secondItem="Zc4-oT-RKr" secondAttribute="leadingMargin" constant="18" id="38u-Db-y77"/>
+                                        <constraint firstItem="e4v-nP-Zck" firstAttribute="leading" secondItem="Zc4-oT-RKr" secondAttribute="leadingMargin" constant="120" id="5dF-am-rK3"/>
+                                        <constraint firstItem="74O-q7-83Q" firstAttribute="top" secondItem="Zc4-oT-RKr" secondAttribute="topMargin" constant="50" id="Acl-nq-gwe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="e4v-nP-Zck" secondAttribute="trailing" constant="120" id="Gac-da-t0Q"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="e4v-nP-Zck" secondAttribute="bottom" constant="102" id="HdQ-Ic-7bq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="74O-q7-83Q" secondAttribute="trailing" constant="18" id="K1v-HI-RWg"/>
+                                        <constraint firstItem="bI8-vU-ous" firstAttribute="leading" secondItem="Zc4-oT-RKr" secondAttribute="leadingMargin" constant="96" id="LL3-1l-q63"/>
+                                        <constraint firstItem="e4v-nP-Zck" firstAttribute="top" secondItem="Zc4-oT-RKr" secondAttribute="topMargin" constant="103" id="OAk-iB-NQp"/>
+                                        <constraint firstItem="VAU-MR-7s7" firstAttribute="top" secondItem="Zc4-oT-RKr" secondAttribute="topMargin" constant="79" id="Uhd-Rm-giJ"/>
+                                        <constraint firstItem="uEs-31-uKZ" firstAttribute="leading" secondItem="Zc4-oT-RKr" secondAttribute="leadingMargin" constant="120" id="Vbt-Rd-e9m"/>
+                                        <constraint firstItem="VAU-MR-7s7" firstAttribute="leading" secondItem="Zc4-oT-RKr" secondAttribute="leadingMargin" constant="96" id="WVU-HG-4Y8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bI8-vU-ous" secondAttribute="trailing" constant="97" id="Zz5-2W-Ug5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="74O-q7-83Q" secondAttribute="bottom" constant="49" id="bTf-fT-cfW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="VAU-MR-7s7" secondAttribute="trailing" constant="97" id="cMX-J3-1fv"/>
+                                        <constraint firstItem="bI8-vU-ous" firstAttribute="top" secondItem="Zc4-oT-RKr" secondAttribute="topMargin" constant="50" id="eob-YT-x0D"/>
+                                        <constraint firstItem="uEs-31-uKZ" firstAttribute="top" secondItem="Zc4-oT-RKr" secondAttribute="topMargin" constant="120" id="euy-6b-R9f"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uEs-31-uKZ" secondAttribute="trailing" constant="120" id="gf8-L4-j3a"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uEs-31-uKZ" secondAttribute="bottom" constant="120" id="hVo-G6-Xqf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="VAU-MR-7s7" secondAttribute="bottom" constant="79" id="sUV-hA-Abv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="checkEngImage" destination="uEs-31-uKZ" id="fID-GN-d6N"/>
+                                    <outlet property="engineOkImage" destination="e4v-nP-Zck" id="SSB-TJ-uIL"/>
+                                    <outlet property="innerView" destination="74O-q7-83Q" id="gUM-m1-2B3"/>
+                                    <outlet property="label" destination="bI8-vU-ous" id="upV-Jb-a5L"/>
+                                    <outlet property="rotatingImage" destination="VAU-MR-7s7" id="6Mn-fu-lol"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="resetButtonCell" rowHeight="51" id="Ehj-ev-i9x" customClass="ButtonCell" customModule="Car_Observer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="508" width="375" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ehj-ev-i9x" id="Hbc-l9-5FM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyc-ik-QH3">
+                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3Z-Dq-Nds">
                                             <rect key="frame" x="97" y="0.0" width="180" height="51"/>
-                                            <color key="backgroundColor" red="0.17254901960784313" green="0.46274509803921571" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.17254901959999999" green="0.46274509800000002" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="180" id="FeH-3J-PL6"/>
-                                                <constraint firstAttribute="height" constant="51" id="VPD-91-Wjp"/>
+                                                <constraint firstAttribute="width" constant="180" id="O1A-iu-ZyO"/>
+                                                <constraint firstAttribute="height" constant="51" id="ePJ-lw-jUh"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="23"/>
                                             <state key="normal" title="Reset DTC">
@@ -261,13 +339,13 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Hyc-ik-QH3" firstAttribute="centerX" secondItem="Zc4-oT-RKr" secondAttribute="centerX" id="5Nr-kB-Xwu"/>
-                                        <constraint firstItem="Hyc-ik-QH3" firstAttribute="centerY" secondItem="Zc4-oT-RKr" secondAttribute="centerY" id="tme-uJ-8Hg"/>
+                                        <constraint firstItem="f3Z-Dq-Nds" firstAttribute="centerY" secondItem="Hbc-l9-5FM" secondAttribute="centerY" id="YDy-Hp-Qas"/>
+                                        <constraint firstItem="f3Z-Dq-Nds" firstAttribute="centerX" secondItem="Hbc-l9-5FM" secondAttribute="centerX" id="nyo-jb-cFX"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="resetTruobleCodesButton" destination="Hyc-ik-QH3" id="Lhw-th-dM8"/>
+                                    <outlet property="chameleonButton" destination="f3Z-Dq-Nds" id="RvE-hw-gz5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -424,7 +502,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="resetTroubleCodes:" destination="ySU-cy-Xfa" eventType="touchUpInside" id="3bK-hj-QhI"/>
+                                    <action selector="buttonActions:" destination="ySU-cy-Xfa" eventType="touchUpInside" id="3bK-hj-QhI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -455,9 +533,13 @@
         <image name="Engine button" width="75" height="77"/>
         <image name="MenuBackground" width="375" height="812"/>
         <image name="Outside params button" width="75" height="77"/>
+        <image name="Rectangle" width="921" height="627"/>
         <image name="SensorsBackgroundV2" width="1125" height="2436"/>
         <image name="Vehicle status button" width="75" height="77"/>
-        <image name="cancel" width="512" height="512"/>
+        <image name="cancel" width="54" height="54"/>
+        <image name="checkArrows" width="156" height="176"/>
+        <image name="checkIcon" width="309" height="204"/>
+        <image name="engineOk" width="342" height="240"/>
         <image name="fuel button" width="75" height="77"/>
         <image name="introBkg" width="2400" height="2436"/>
         <image name="troubleDesk" width="936" height="216"/>

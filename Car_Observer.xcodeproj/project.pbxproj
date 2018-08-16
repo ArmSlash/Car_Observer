@@ -13,12 +13,13 @@
 		4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227D20861B0800FAF1F6 /* SensorsCell.swift */; };
 		4900228020861B2000FAF1F6 /* TroubleCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */; };
 		491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491699C0209D843400DFF7C0 /* PidDisplayManager.swift */; };
-		492AB49920C7D4D3007CD853 /* ResetButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */; };
+		492AB49920C7D4D3007CD853 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AB49820C7D4D3007CD853 /* ButtonCell.swift */; };
 		492AB4D120D90FB3007CD853 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492AB4C420D90F9F007CD853 /* SQLite.framework */; };
 		492AB4D220D90FB3007CD853 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 492AB4C420D90F9F007CD853 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4933EF1E20ACA0D400883EE9 /* ConnIndicatorWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */; };
 		493559B420FB139D00E13C90 /* TKAnimatedCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493559B320FB139D00E13C90 /* TKAnimatedCheckButton.swift */; };
 		4941E58C20B8742900A6BB87 /* MenuSubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941E58B20B8742800A6BB87 /* MenuSubButton.swift */; };
+		494C4A04211F131E003B940D /* BigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C4A03211F131E003B940D /* BigCell.swift */; };
 		494EF22A20F23FAC00F4FD97 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EF22920F23FAC00F4FD97 /* Page.swift */; };
 		4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */; };
 		4951DDEC20E65BDE0035148E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951DDEB20E65BDE0035148E /* IntroViewController.swift */; };
@@ -148,11 +149,12 @@
 		4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroubleCodesViewController.swift; sourceTree = "<group>"; };
 		490AFAE220A011A500B8E868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		491699C0209D843400DFF7C0 /* PidDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidDisplayManager.swift; sourceTree = "<group>"; };
-		492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonCell.swift; sourceTree = "<group>"; };
+		492AB49820C7D4D3007CD853 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		492AB4B920D90F9F007CD853 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		4933EF1D20ACA0D400883EE9 /* ConnIndicatorWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnIndicatorWithButton.swift; sourceTree = "<group>"; };
 		493559B320FB139D00E13C90 /* TKAnimatedCheckButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKAnimatedCheckButton.swift; sourceTree = "<group>"; };
 		4941E58B20B8742800A6BB87 /* MenuSubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSubButton.swift; sourceTree = "<group>"; };
+		494C4A03211F131E003B940D /* BigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCell.swift; sourceTree = "<group>"; };
 		494EF22920F23FAC00F4FD97 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4950D9D920AE25B4003CCD5E /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 		4951DDEB20E65BDE0035148E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -247,8 +249,9 @@
 			isa = PBXGroup;
 			children = (
 				4900227F20861B1F00FAF1F6 /* TroubleCodesViewController.swift */,
+				494C4A03211F131E003B940D /* BigCell.swift */,
 				4900227D20861B0800FAF1F6 /* SensorsCell.swift */,
-				492AB49820C7D4D3007CD853 /* ResetButtonCell.swift */,
+				492AB49820C7D4D3007CD853 /* ButtonCell.swift */,
 				4951DDFB20E8DBF60035148E /* ResetPopoverVC.swift */,
 			);
 			path = TroubleCodeMenu;
@@ -529,7 +532,7 @@
 			files = (
 				490022742082303300FAF1F6 /* PidsListViewController.swift in Sources */,
 				4950D9DA20AE25B4003CCD5E /* MainMenuButton.swift in Sources */,
-				492AB49920C7D4D3007CD853 /* ResetButtonCell.swift in Sources */,
+				492AB49920C7D4D3007CD853 /* ButtonCell.swift in Sources */,
 				49DD8DAA207F6C140086E442 /* MainMenuViewController.swift in Sources */,
 				4951DDFC20E8DBF60035148E /* ResetPopoverVC.swift in Sources */,
 				49DD8DA8207F6C140086E442 /* AppDelegate.swift in Sources */,
@@ -545,6 +548,7 @@
 				4900228020861B2000FAF1F6 /* TroubleCodesViewController.swift in Sources */,
 				491699C1209D843400DFF7C0 /* PidDisplayManager.swift in Sources */,
 				493559B420FB139D00E13C90 /* TKAnimatedCheckButton.swift in Sources */,
+				494C4A04211F131E003B940D /* BigCell.swift in Sources */,
 				4900227E20861B0800FAF1F6 /* SensorsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

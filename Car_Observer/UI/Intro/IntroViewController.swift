@@ -9,19 +9,20 @@
 import UIKit
 
 class IntroViewController: UIViewController, UIScrollViewDelegate  {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var bkgImageView: UIImageView!
+    let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       let pages = createPages()
+        let pages = createPages()
         fillScrollView(with: pages)
-        
+        impactFeedback.prepare()
     }
     
-
+    
     private func createPages() -> [Page]{
         let page1: Page = Bundle.main.loadNibNamed("Page", owner: self, options: nil)?.first as! Page
         page1.imageView.image = UIImage(named: "step1")
@@ -34,7 +35,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate  {
         let page5: Page = Bundle.main.loadNibNamed("Page", owner: self, options: nil)?.first as! Page
         page5.imageView.image = UIImage(named: "step5")
         page5.button.isHidden = false
-        page5.button.addTarget(self, action: #selector(exit), for: .touchUpInside)
+        page5.button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
         
         
         return [page1, page2, page3, page4, page5]
@@ -45,7 +46,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate  {
         scrollView.contentSize = CGSize(width: view.bounds.width*CGFloat(pages.count), height: view.bounds.height);
         
         for index in 0..<pages.count{
-           pages[index].frame = CGRect(x: view.bounds.width*CGFloat(index), y: 0, width: view.bounds.width, height: view.bounds.height)
+            pages[index].frame = CGRect(x: view.bounds.width*CGFloat(index), y: 0, width: view.bounds.width, height: view.bounds.height)
             scrollView.insertSubview(pages[index], at: 0)
         }
     }
@@ -58,14 +59,12 @@ class IntroViewController: UIViewController, UIScrollViewDelegate  {
         pageControl.currentPage = currentPage
     }
     
-    @IBAction func dismiss(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
-        print("tapped")
-    }
-    
-    
-  @objc  func exit(){
+    @objc @IBAction func dismiss(_ sender: Any) {
+        impactFeedback.impactOccurred()
         self.dismiss(animated: true, completion: nil)
+        print("tapped")
+        
     }
-
+    
+    
 }

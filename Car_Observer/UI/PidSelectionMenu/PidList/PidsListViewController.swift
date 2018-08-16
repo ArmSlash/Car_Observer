@@ -70,8 +70,6 @@ class PidsListViewController: UIViewController, UITableViewDelegate, UITableView
         
         if !sharedScanner.isConnected{
             cell?.metricsLabel.text = "No Connection..."
-           print(cell?.autoSelect)
-           
         }else{
             observer.observe(command: .pid(number: pid)) { (descriptor) in
                 let respStr = descriptor?.valueMetrics

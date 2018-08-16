@@ -9,19 +9,27 @@
 import UIKit
 import OBD2Swift
 
+protocol ResetPopoverDelegate {
+    func resetDone()
+}
+
 class ResetPopoverVC: UIViewController {
+    
+    var delegate:ResetPopoverDelegate?
+    
     let obd = OBD2.shared
     let observer = Observer<Command.Mode01>()
+    var resetIsCompleat = false
+    let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     @IBOutlet var resetButton: UIButton!
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         ObserverQueue.shared.register(observer: observer)
         sendRequest()
+        impactFeedback.prepare()
     }
     
     private func sendRequest(){
@@ -57,14 +65,35 @@ class ResetPopoverVC: UIViewController {
         resetButton.backgroundColor = buttonColor
     }
     
-    @IBAction func resetTroubleCodes(_ sender: Any){
+    fileprivate func resetTroubleCodes() {
+        obd.request(command:Command.Mode04.resetTroubleCode){ _ in
+            OperationQueue.main.addOperation {
+                self.resetButton.setTitle("Done", for: .normal)
+                let buttonColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+                self.resetButton.backgroundColor = buttonColor
+            }
+            self.resetIsCompleat = true
+        }
+    }
+    
+    @IBAction func buttonActions(_ sender: Any){
+        impactFeedback.impactOccurred()
         print(">>>>>>>>>>>>>>R E S E T<<<<<<<<<<<<<<<<")
-        obd.request(command:Command.Mode04.resetTroubleCode){ _ in}
+        if !resetIsCompleat{
+            resetTroubleCodes()
+        }else{
+            exit()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         ObserverQueue.shared.unregister(observer: observer)
         obd.stopScan()
+    }
+    
+    func  exit(){
+        dismiss(animated: true, completion: nil)
+        delegate?.resetDone()
     }
     
 }

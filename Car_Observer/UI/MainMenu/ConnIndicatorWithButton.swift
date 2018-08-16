@@ -27,10 +27,10 @@ class ConnIndicatorWithButton: UIView {
         self.addSubview(setRotatingImageView(for: self))
         self.addSubview(setConnectionStatusLabel(for: self))
         self.addSubview(setConnectonButton(for: self))
-        setConnectionIndicatorState(for: currentScannerState)
         checkbox = TKAnimatedCheckButton(frame: rotatingImageView.frame)
         checkbox.layer.opacity = 0
         self.insertSubview(checkbox, at: 0)
+        setConnectionIndicatorState(for: currentScannerState)
         notificationFeedbackGenerator.prepare()
     }
     
@@ -83,14 +83,22 @@ class ConnIndicatorWithButton: UIView {
         case .none: return
         case .openingConnection: rotate()
         case .initializing: rotate()
-        case .connected: changeButtonToConnectedState()
+        case .connected: connectedButtonState()
             
         }
     }
     
+    func connectedButtonState(){
+         hideRotatingViewAndButton()
+        self.checkbox.layer.opacity = 1
+        self.checkbox.check.strokeColor = UIColor.green.cgColor
+        self.checkbox.shape.strokeColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
+    }
+    
     func changeToConnectedState(){
         UIView.animate(withDuration: 0.3, animations: {
-            self.changeButtonToConnectedState()
+            self.hideRotatingViewAndButton()
+            self.showChekbox()
         }) {_ in
             if self.isRotating{
                 self.isRotating = !self.isRotating
@@ -99,10 +107,6 @@ class ConnIndicatorWithButton: UIView {
         }
     }
     
-    private func changeButtonToConnectedState(){
-        hideRotatingViewAndButton()
-        showChekbox()
-    }
     
     private func hideRotatingViewAndButton(){
         self.rotatingImageView.layer.opacity = 0

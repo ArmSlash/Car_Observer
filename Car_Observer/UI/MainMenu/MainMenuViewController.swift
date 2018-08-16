@@ -17,9 +17,9 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
     
     
     private let mediumImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
-   
     
-    private let sharedScanner = OBD2.shared
+    
+    private var sharedScanner = OBD2.shared
     private let inspector = ConnectionInspector()
     
     
@@ -35,13 +35,14 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
         super.viewDidLoad()
         setNavigationBarAppearence()
         inspector.delegate = self
-        startObservingScanerState()
+        
     }
     
     
     private func startObservingScanerState(){
         sharedScanner.stateChanged  = {[weak self] state in
             self?.currentScannerState = state
+            print("//////////////////////\(state)////////////////////////")
         }
     }
     
@@ -127,13 +128,16 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
             return
         }
         inspector.waitForConnection(seconds: 3)
+        self.sharedScanner.reinit()
+        self.sharedScanner = OBD2.shared
+        startObservingScanerState()
         
         sharedScanner.connect {[weak self] (success, error) in
-            OperationQueue.main.addOperation({
+            OperationQueue.main.addOperation{
                 if let error = error {
                     print("OBD connection failed with \(error)")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.connectionIndicator?.stopRotation()
+                        self?.connectionIndicator?.stopRotation()
                     }
                 }else{
                     self?.inspector.stop()
@@ -142,15 +146,22 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
                         self?.connectionIndicator?.changeToConnectedState()                       
                     }
                 }
-            })
+            }
         }
         self.connectionIndicator?.rotate()
+    }
+    
+    fileprivate func reConnectToOBD() {
+        self.sharedScanner.reinit()
+        self.sharedScanner = OBD2.shared
+        self.connect(self)
+        print("reconnect")
     }
     
     //MARK: Connection Alert
     
     fileprivate func createTextField(_ textField: (UITextField), for param:OBD2.ConnectionParam) {
-       
+        
         textField.keyboardAppearance = .dark
         textField.keyboardType = .numbersAndPunctuation
         textField.clearsOnBeginEditing = true
@@ -159,18 +170,19 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
         
         switch param {
         case .host: textField.placeholder = "Host IP: \(self.sharedScanner.connectionSettings().host)"
-                    textField.tag = 0
+        textField.tag = 0
         case .port: textField.placeholder = "Port: \(self.sharedScanner.connectionSettings().port)"
-                    textField.tag = 1
+        textField.tag = 1
         }
     }
     
-    func showAlert(){
+    
+    func showSettingsAlert(){
         
-        let alert = UIAlertController(title: "Ooops...", message: "Connection failed \n Try to change settings \n Or leave as it and try again :)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Settings", message: "Here you can change your adapter IP and Port", preferredStyle: .alert)
         
         let retryAction = UIAlertAction(title: "Retry", style: .default) { (action) in
-            self.connect(self)
+            self.reConnectToOBD()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -183,16 +195,28 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
             self.createTextField(textField, for: .port)
         }
         
-       present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "Ooops...", message: "Connection failed \n Try to change settings \n Or try again :)", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (action) in
+            self.showSettingsAlert()
+        }
+        let cancelAction = UIAlertAction(title: "Try Again", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        alert.addAction(settingsAction)
+         present(alert, animated: true, completion: nil)
     }
     
     //MARK: ConnectionInspectorDelegate
     
     func noConnectiontoObd() {
-//        self.connectionIndicator?.stopRotation()
-       self.sharedScanner.disconnect()
-//        showAlert()
-        connectionIndicator?.changeToConnectedState()
+                self.connectionIndicator?.stopRotation()
+                self.sharedScanner.disconnect()
+              showAlert()
+            //connectionIndicator?.changeToConnectedState()
+            //self.currentScannerState = .connected
     }
     
     // MARK: UITextFieldDelegate
@@ -214,7 +238,7 @@ class MainMenuViewController: UIViewController, UIApplicationDelegate, MainMenuB
         let compSepByCharInSet = string.components(separatedBy: cSet)
         var char = compSepByCharInSet.joined(separator: ".")
         if textField.tag == 1{
-         char = compSepByCharInSet.joined()
+            char = compSepByCharInSet.joined()
         }
         print(textField.tag)
         return string == char
