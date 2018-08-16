@@ -60,7 +60,7 @@ class BigCell: UITableViewCell {
     }
     
     func showMessege(){
-        UIView.animate(withDuration: 1, delay: 0.3, options: .beginFromCurrentState, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .beginFromCurrentState, animations: {
             self.engineOkImage.frame.origin.y += 20
             self.label.alpha = 1
             self.label.frame.origin.y += 40

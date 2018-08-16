@@ -92,8 +92,8 @@ class TroubleCodesViewController: UITableViewController, UIPopoverPresentationCo
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             if self.sharedScanner.isConnected{
                 self.sharedScanner.request(command: Command.Mode03.troubleCode) { (descriptor) in
-                    self.troubleCodeNames = (descriptor?.getTroubleCodes())!
-                   // self.troubleCodeNames = ["P0703", "U2019", "U1451"]
+//self.troubleCodeNames = (descriptor?.getTroubleCodes())!
+                    self.troubleCodeNames = ["P0703", "U2019", "U1451"]
                     self.dtcState = .checked
                 }
             }

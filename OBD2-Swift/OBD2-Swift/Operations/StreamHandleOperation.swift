@@ -23,7 +23,7 @@ class StreamHandleOperation: Operation, StreamDelegate {
     init(inputStream: InputStream, outputStream: OutputStream) {
         self.input = inputStream
         self.output = outputStream
-        super.init()
+       
     }
     
     override func main() {

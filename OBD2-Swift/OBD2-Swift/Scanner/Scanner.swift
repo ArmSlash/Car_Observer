@@ -128,7 +128,7 @@ class `Scanner`: StreamHolder {
         
         // Open connection to OBD
         
-        let openConnectionOperation = OpenOBDConnectionOperation(inputStream: inputStream, outputStream: outputStream)
+    let openConnectionOperation = OpenOBDConnectionOperation(inputStream: inputStream, outputStream: outputStream)
         
         openConnectionOperation.completionBlock = { [weak self] in
             if let error = openConnectionOperation.error {
