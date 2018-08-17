@@ -34,11 +34,13 @@ class IntroViewController: UIViewController, UIScrollViewDelegate  {
         page4.imageView.image = UIImage(named: "step4")
         let page5: Page = Bundle.main.loadNibNamed("Page", owner: self, options: nil)?.first as! Page
         page5.imageView.image = UIImage(named: "step5")
-        page5.button.isHidden = false
-        page5.button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
+        let page6: Page = Bundle.main.loadNibNamed("Page", owner: self, options: nil)?.first as! Page
+        page6.imageView.image = UIImage(named: "step6")
+        page6.button.isHidden = false
+        page6.button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
         
         
-        return [page1, page2, page3, page4, page5]
+        return [page1, page2, page3, page4, page5, page6]
     }
     
     private func fillScrollView(with pages:[Page]){
