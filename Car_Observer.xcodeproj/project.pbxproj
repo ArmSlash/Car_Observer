@@ -230,7 +230,6 @@
 			children = (
 				49D1C3A420821BCF009CF4DD /* PidSelectionViewController.swift */,
 				4951DDF920E822BF0035148E /* DarkView.swift */,
-				491699C0209D843400DFF7C0 /* PidDisplayManager.swift */,
 				4957D80420DD732C0087F06C /* PidList */,
 			);
 			path = PidSelectionMenu;
@@ -304,6 +303,7 @@
 				49DD8DA7207F6C140086E442 /* AppDelegate.swift */,
 				4957D7FD20D92D530087F06C /* obd-trouble-codes.sqlite3 */,
 				4951DDF720E7F01A0035148E /* ConnectionInspector.swift */,
+				491699C0209D843400DFF7C0 /* PidDisplayManager.swift */,
 				49DAC13B208CF95D008F5D30 /* UI */,
 				4900227B2085FED600FAF1F6 /* Assets.xcassets */,
 				49DD8DAB207F6C140086E442 /* Main.storyboard */,
