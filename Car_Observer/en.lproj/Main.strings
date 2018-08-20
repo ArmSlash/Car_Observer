@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Hyc-ik-QH3"; */
+"Hyc-ik-QH3.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Distance traveled with malfunction indicator lamp (MIL) on"; ObjectID = "Oyc-Zd-DzZ"; */
+"Oyc-Zd-DzZ.text" = "Distance traveled with malfunction indicator lamp (MIL) on";
+
+/* Class = "UILabel"; text = "Selected sensors"; ObjectID = "e5q-kR-irZ"; */
+"e5q-kR-irZ.text" = "Selected sensors";
+
+/* Class = "UIButton"; normalTitle = "Show >"; ObjectID = "kvS-k3-d5h"; */
+"kvS-k3-d5h.normalTitle" = "Show >";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sDv-z9-7P0"; */
+"sDv-z9-7P0.text" = "Label";
