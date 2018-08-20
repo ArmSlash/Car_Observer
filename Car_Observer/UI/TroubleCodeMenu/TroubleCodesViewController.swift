@@ -165,7 +165,7 @@ class TroubleCodesViewController: UITableViewController, UIPopoverPresentationCo
                 cell.chameleonButton.setTitle("OK", for: .normal)
             }else if gotTroubleCodes{
                 cell.setButtonEnabled()
-                cell.chameleonButton.setTitle("Reset DTC", for: .normal)
+                cell.chameleonButton.setTitle("Clear DTC", for: .normal)
             }
             return cell
         }
